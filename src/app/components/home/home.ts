@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router'; 
+import { RouterModule } from '@angular/router';
 import { Service } from '../pages/service/service';
 
 @Component({
@@ -12,6 +12,6 @@ import { Service } from '../pages/service/service';
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
-export class Home {  
+export class Home {
 
 }

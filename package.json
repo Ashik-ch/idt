@@ -33,6 +33,7 @@
     "@angular/router": "^20.3.0",
     "@fortawesome/fontawesome-free": "^7.0.1",
     "@omnedia/ngx-fade": "^3.0.0",
+    "@omnedia/ngx-shiny-text": "^3.0.0",
     "gsap": "^3.13.0",
     "primeicons": "^7.0.0",
     "rxjs": "~7.8.0",
