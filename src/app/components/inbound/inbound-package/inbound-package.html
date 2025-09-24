@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <div class="min-h-screen bg-gray-900">          
+        <div class="min-h-screen">
             <!-- Navigation Tabs -->
             <div class="sticky top-0 z-40 bg-white shadow-lg border-b">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,11 +65,10 @@
                 </div>
             </div>
 
-
-
-
+            <div *ngIf="activeTab === 'overview'" class="mb-2">
+                <app-inbound-overview></app-inbound-overview>
+            </div>
         </div>
-
 
 
 

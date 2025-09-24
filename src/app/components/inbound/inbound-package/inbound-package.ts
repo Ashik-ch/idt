@@ -4,10 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { statesData } from '../../../data/inbound.data';
 import { Package, travelPackages } from '../../../data/package.data';
+import { InboundOverview } from '../../package/inbound-overview/inbound-overview';
 
 @Component({
   selector: 'app-inbound-package',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,
+    InboundOverview,
+  ],
   templateUrl: './inbound-package.html',
   styleUrl: './inbound-package.css'
 })

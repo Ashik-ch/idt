@@ -83,43 +83,43 @@ export const travelPackages: Package[] = [
         day: 'Day 01',
         title: 'Arrival at Cochin',
         details: ['Pickup at airport', 'Drive to hotel', 'Evening city walk'],
-        image: 'https://source.unsplash.com/800x600/?cochin,kerala'
+        image: 'assets/images/a.jpg'
       },
       {
         day: 'Day 02',
         title: 'Munnar sightseeing',
         details: ['Tea gardens visit', 'Eravikulam National Park', 'Photo points'],
-        image: 'https://source.unsplash.com/800x600/?munnar,tea-garden'
+        image: 'assets/images/b.jpg'
       },
       {
         day: 'Day 03',
         title: 'Thekkady wildlife safari',
         details: ['Periyar sanctuary boat ride', 'Spice plantation tour', 'Kalaripayattu show'],
-        image: 'https://source.unsplash.com/800x600/?thekkady,periyar'
+        image: 'assets/images/c.jpg'
       },
       {
         day: 'Day 04',
         title: 'Houseboat cruise',
         details: ['Board Alleppey houseboat', 'Traditional lunch', 'Sunset on backwaters'],
-        image: 'https://source.unsplash.com/800x600/?alleppey,houseboat'
+        image: 'assets/images/d.jpg'
       },
       {
         day: 'Day 05',
         title: 'Kumarakom visit',
         details: ['Bird sanctuary', 'Canoe ride', 'Lakeside relaxation'],
-        image: 'https://source.unsplash.com/800x600/?kumarakom,lake'
+        image: 'assets/images/e.jpg'
       },
       {
         day: 'Day 06',
         title: 'Alleppey backwaters',
         details: ['Village walk', 'Backwater shikara', 'Cultural interactions'],
-        image: 'https://source.unsplash.com/800x600/?kerala,backwaters'
+        image: 'assets/images/f.jpg'
       },
       {
         day: 'Day 07',
         title: 'Departure from Cochin',
         details: ['Checkout', 'Transfer to airport', 'Goodbye Kerala'],
-        image: 'https://source.unsplash.com/800x600/?kochi,airport'
+        image: 'assets/images/g.jpg'
       }
     ],
     inclusions: ['Twin-sharing accommodation', 'Breakfast & dinner (as per itinerary)', 'Local English-speaking driver', 'All transfers & taxes'],
