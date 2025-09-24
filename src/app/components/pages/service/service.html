@@ -11,7 +11,8 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div *ngFor="let f of features" class="feature-card text-center p-6 shadow-xl rounded-lg   cursor-pointer">
+            <om-fade transitionDuration=".7s" direction="down" *ngFor="let f of features"
+                class="feature-card text-center p-6 shadow-xl rounded-lg cursor-pointer">
                 <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" [ngClass]="f.iconBg">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" [ngClass]="f.iconColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="f.iconPath" />
@@ -20,7 +21,8 @@
                 </div>
                 <h3 class="text-xl font-semibold text-blue-700 mb-2">{{ f.title }}</h3>
                 <p class="text-gray-500">{{ f.description }}</p>
-            </div>
+                <!-- </div> -->
+            </om-fade>
         </div>
     </div>
 </div>
