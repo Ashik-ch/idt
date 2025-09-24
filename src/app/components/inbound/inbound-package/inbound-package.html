@@ -11,9 +11,25 @@
             </a>
         </div>
 
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4"> {{ stateName }} Travel Packages </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto"> {{ stateDescription }} </p>
+        <div class="text-center bg-red-100 mb-12">
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div data-animate="hero" class="text-center space-y-6">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-4 transform transition-all duration-1000">
+                        {{ packageData?.title }}
+                    </h3>
+                    <div class="flex items-center justify-center space-x-4 text-xl">
+                        <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                            📅 {{ packageData?.duration }}
+                        </span>
+                        <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                            <!-- 🗺️ {{ stateParam | titlecase }} -->
+                        </span>
+                    </div>
+                    <p class="text-xl md:text-xl max-w-4xl mx-auto leading-relaxed opacity-90 text-medium py-3">
+                        {{ packageData?.summary }}
+                    </p>
+                </div>
+            </div>
         </div>
 
         <!-- Today's Deal Banner -->
@@ -34,12 +50,37 @@
             </div>
         </div>
 
-        <!-- State Map with Package Locations -->
+        <div class="min-h-screen bg-gray-900">          
+            <!-- Navigation Tabs -->
+            <div class="sticky top-0 z-40 bg-white shadow-lg border-b">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <nav class="flex space-x-8 overflow-x-auto justify-center">
+                        <button *ngFor="let tab of ['overview', 'itinerary', 'pricing', 'hotels', 'details']"
+                            (click)="setActiveTab(tab)"
+                            [class]="'m-3 py-2 px-4 border-b-2 rounded-xl font-medium text-sm whitespace-nowrap transition-colors duration-200' + 
+                           (activeTab === tab ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300')">
+                            {{ tab | titlecase }}
+                        </button>
+                    </nav>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
         <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
             <div class="py-16 bg-white">
                 <div class="max-w-6xl mx-auto px-4">
                     <div class="flex justify-center text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800"> Popular Destination of {{stateName}}
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800"> Popular Destination of
+                            {{stateName}}
                         </h2>
                     </div>
 

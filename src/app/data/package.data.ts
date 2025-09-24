@@ -66,7 +66,7 @@ export interface Package {
 export const travelPackages: Package[] = [
   {
     id: 'kerala',
-    title: 'Charm of Kerala and Border Beauties – 06 Nights / 07 Days',
+    title: 'Charm of Kerala and Border Beauties',
     duration: '06 Nights / 07 Days',
     summary: 'Experience Kerala’s scenic beauty with curated tours across Munnar, Thekkady, Kumarakom & Cochin.',
     quickItinerary: [
