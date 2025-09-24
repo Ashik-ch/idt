@@ -70,8 +70,8 @@
                 <app-inbound-overview></app-inbound-overview>
             </div>
 
-            <div *ngIf="activeTab === 'itinerary'" class="mb-2">
-                <app-inbound-itinerary></app-inbound-itinerary>
+            <div *ngIf="activeTab === 'itinerary'" class="mb-2"> 
+                <app-inbound-itinerary [packageData]="packageData?.detailedItinerary"></app-inbound-itinerary>
             </div>
         </div>
 
