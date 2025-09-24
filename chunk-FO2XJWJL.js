@@ -1,1 +1,0 @@
-import{Na as e,eb as n,fb as u,rb as s}from"./chunk-OICLOJVP.js";var a=class o{static \u0275fac=function(t){return new(t||o)};static \u0275cmp=e({type:o,selectors:[["app-outbound"]],decls:2,vars:0,template:function(t,d){t&1&&(n(0,"p"),s(1,"outbound works!"),u())},encapsulation:2})};export{a as Outbound};

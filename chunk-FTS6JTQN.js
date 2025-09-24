@@ -1,0 +1,1 @@
+import{Na as o,eb as t,fb as i,tb as s}from"./chunk-ZXPV6FRK.js";var a=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=o({type:n,selectors:[["app-inbound-view"]],decls:2,vars:0,template:function(e,p){e&1&&(t(0,"p"),s(1,"inbound-view works!"),i())},encapsulation:2})};export{a as InboundView};
