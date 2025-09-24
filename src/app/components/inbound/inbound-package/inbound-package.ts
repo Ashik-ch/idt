@@ -5,11 +5,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { statesData } from '../../../data/inbound.data';
 import { Package, travelPackages } from '../../../data/package.data';
 import { InboundOverview } from '../../package/inbound-overview/inbound-overview';
+import { NgxShineBorderComponent } from '@omnedia/ngx-shine-border';
 
 @Component({
   selector: 'app-inbound-package',
   imports: [CommonModule, FormsModule,
-    InboundOverview,
+    InboundOverview, 
+    NgxShineBorderComponent 
   ],
   templateUrl: './inbound-package.html',
   styleUrl: './inbound-package.css'

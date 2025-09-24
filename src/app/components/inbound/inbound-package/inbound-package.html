@@ -1,4 +1,4 @@
-<div class="min-h-screen bg-gray-50 py-8">
+<div class="min-h-screen bg-red-50 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Back Button -->
         <div class="mb-6">
@@ -10,30 +10,31 @@
                 Back to Inbound Packages
             </a>
         </div>
-
-        <div class="text-center bg-red-100 mb-12">
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div data-animate="hero" class="text-center space-y-6">
-                    <h3 class="text-3xl md:text-4xl font-bold mb-4 transform transition-all duration-1000">
-                        {{ packageData?.title }}
-                    </h3>
-                    <div class="flex items-center justify-center space-x-4 text-xl">
-                        <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
-                            📅 {{ packageData?.duration }}
-                        </span>
-                        <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
-                            <!-- 🗺️ {{ stateParam | titlecase }} -->
-                        </span>
+        <om-shine-border borderRadius="1rem"> 
+            <div class="text-center">
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div data-animate="hero" class="text-center space-y-6">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-4 transform transition-all duration-1000">
+                            {{ packageData?.title }}
+                        </h3>
+                        <div class="flex items-center justify-center space-x-4 text-xl">
+                            <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                                📅 {{ packageData?.duration }}
+                            </span>
+                            <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                                <!-- 🗺️ {{ stateParam | titlecase }} -->
+                            </span>
+                        </div>
+                        <p class="text-xl md:text-xl max-w-4xl mx-auto leading-relaxed opacity-90 text-medium py-3">
+                            {{ packageData?.summary }}
+                        </p>
                     </div>
-                    <p class="text-xl md:text-xl max-w-4xl mx-auto leading-relaxed opacity-90 text-medium py-3">
-                        {{ packageData?.summary }}
-                    </p>
                 </div>
             </div>
-        </div>
+        </om-shine-border>
 
         <!-- Today's Deal Banner -->
-        <div class="bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl p-8 mb-12 text-white text-center">
+        <div class="bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl p-8 my-12 text-white text-center">
             <div class="flex items-center justify-center mb-4">
                 <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

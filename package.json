@@ -34,6 +34,7 @@
     "@angular/platform-browser-dynamic": "^20.0.0",
     "@angular/router": "^20.0.0",
     "@omnedia/ngx-fade": "^3.0.0",
+    "@omnedia/ngx-shine-border": "^3.0.0",
     "@omnedia/ngx-shiny-text": "^3.0.0",
     "@omnedia/ngx-vortex": "^3.0.1",
     "primeicons": "^7.0.0",
