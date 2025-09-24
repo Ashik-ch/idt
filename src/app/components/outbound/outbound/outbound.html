@@ -1,2 +1,64 @@
-<p>outbound works!</p>
-<app-outbound-map></app-outbound-map>
+<div class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-6">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">
+                International Travel Packages
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Explore the world with our carefully curated international travel packages.
+                From exotic beaches to historic cities, discover amazing destinations across continents.
+            </p>
+        </div>
+
+        <app-outbound-map></app-outbound-map>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">
+                Explore Destinations by Country
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div #countryCard *ngFor="let country of countries" class="group cursor-pointer"
+                    (click)="navigateToCountry(country.code)">
+                    <div *ngIf="country.image; else gradientCard"
+                        class="relative rounded-xl overflow-hidden group h-full">
+                        <div class="absolute inset-0 bg-cover bg-center filter brightness-50 transition-all duration-300 group-hover:brightness-90"
+                            [style.background-image]="'url(' + country.image + ')'"></div>
+                        <div
+                            class="relative flex flex-col justify-between h-80 pt-6 px-6 text-white transition-all duration-300 group-hover:shadow-lg">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-bold">{{ country.title }}</h3>
+                                <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-lg font-medium">{{ country.subtitle }}</p>
+                                <p class="text-sm text-gray-200">{{ country.desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ng-template #gradientCard>
+                        <div
+                            class="bg-gradient-to-br rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold">{{ country.title }}</h3>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                            <p class="mb-2">{{ country.subtitle }}</p>
+                            <p class="text-sm">{{ country.desc }}</p>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

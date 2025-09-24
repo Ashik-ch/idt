@@ -11,13 +11,7 @@ import am5geodata_singaporeLow from "@amcharts/amcharts5-geodata/singaporeLow";
 import am5geodata_sriLankaLow from "@amcharts/amcharts5-geodata/sriLankaLow";
 import am5geodata_southAfricaLow from "@amcharts/amcharts5-geodata/southAfricaLow";
 import { Router } from '@angular/router';
-
-interface CountryInfo {
-  color: number;
-  details: string;
-  image: string;
-  countryCode: string;
-}
+import { highlightedCountries } from '../../../data/outbound.data';
 
 interface MapDataContext {
   id?: string;
@@ -39,51 +33,7 @@ export class OutboundMap implements OnInit, OnDestroy {
 
   @ViewChild('chartdiv', { static: true }) chartDiv!: ElementRef;
 
-  // Highlighted countries with their details
-  highlightedCountries: Record<string, CountryInfo> = {
-    "US": {
-      color: 0xff6f61,
-      details: "United States: Land of opportunities and diverse landscapes",
-      image: "assets/images/a.jpg",
-      countryCode: "usa"
-    },
-    "IN": {
-      color: 0x6a5acd,
-      details: "India: Incredible diversity, rich culture and heritage",
-      image: "assets/images/b.jpg",
-      countryCode: "india"
-    },
-    "AE": {
-      color: 0xffa500,
-      details: "UAE: Modern marvels and desert adventures",
-      image: "assets/images/c.jpg",
-      countryCode: "uae"
-    },
-    "GB": {
-      color: 0x008000,
-      details: "United Kingdom: Royal heritage and modern charm",
-      image: "assets/images/d.jpg",
-      countryCode: "uk"
-    },
-    "SG": {
-      color: 0x1e90ff,
-      details: "Singapore: Garden city with futuristic architecture",
-      image: "assets/images/e.jpg",
-      countryCode: "singapore"
-    },
-    "LK": {
-      color: 0xdc143c,
-      details: "Sri Lanka: Pearl of the Indian Ocean",
-      image: "assets/images/f.jpg",
-      countryCode: "sri-lanka"
-    },
-    "ZA": {
-      color: 0x800080,
-      details: "South Africa: Rainbow nation with stunning wildlife",
-      image: "assets/images/c.jpg",
-      countryCode: "south-africa"
-    }
-  };
+  highlightedCountries = highlightedCountries;
 
   // Country-specific geo data mapping
   private countryGeoData: Record<string, any> = {
