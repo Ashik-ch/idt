@@ -1,1 +1,55 @@
-<p>inbound-pricing works!</p>
+<section data-animate="pricing" class="bg-white rounded-2xl shadow-xl p-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+        <span class="bg-yellow-100 p-3 rounded-full mr-4">💰</span>
+        Package Pricing
+    </h2>
+
+    <div class="space-y-8">
+        <div *ngFor="let season of pricing" class="border-2 rounded-xl p-6"
+            [class]="getSeasonClass(season.season)">
+            <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">{{ season.season }}</h3>
+
+            <div class="overflow-x-auto">
+                <table class="w-full  text-gray-800">
+                    <thead>
+                        <tr class="border-b-2 border-gray-800">
+                            <th class="text-left py-3 px-4 font-bold">Category</th>
+                            <th class="text-center py-3 px-4 font-bold">2 Pax</th>
+                            <th class="text-center py-3 px-4 font-bold">4-6 Pax</th>
+                            <th class="text-center py-3 px-4 font-bold">8-10 Pax</th>
+                            <th class="text-center py-3 px-4 font-bold">Extra Person</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let category of season.categories"
+                            class="border-b hover:bg-gray-50 transition-colors">
+                            <td class="py-3 px-4 font-medium">{{ category.category }}</td>
+                            <td class="py-3 px-4 text-center font-bold text-green-600">{{
+                                formatPrice(category.twoPax) }}</td>
+                            <td class="py-3 px-4 text-center font-bold text-green-600">{{
+                                formatPrice(category.fourToSixPax) }}</td>
+                            <td class="py-3 px-4 text-center font-bold text-green-600">{{
+                                formatPrice(category.eightToTenPax) }}</td>
+                            <td class="py-3 px-4 text-center font-bold text-blue-600">{{
+                                formatPrice(category.extraPerson) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transport Options -->
+    <div class="mt-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+            <span class="bg-gray-100 p-2 rounded-full mr-3">🚗</span>
+            Transport Options
+        </h3>
+        <div class="grid md:grid-cols-2 gap-4">
+            <div *ngFor="let transport of transport" class="p-4 bg-gray-50 rounded-lg border">
+                <h4 class="font-bold text-gray-800">{{ transport.pax }}</h4>
+                <p class="text-gray-600">{{ transport.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>

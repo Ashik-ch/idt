@@ -70,12 +70,13 @@
                 <app-inbound-overview></app-inbound-overview>
             </div>
 
-            <div *ngIf="activeTab === 'itinerary'" class="mb-2"> 
+            <div *ngIf="activeTab === 'itinerary'" class="mb-2">
                 <app-inbound-itinerary [detailedItinerary]="packageData?.detailedItinerary"></app-inbound-itinerary>
             </div>
 
-            <div *ngIf="activeTab === 'pricing'" class="mb-2"> 
-                <app-inbound-pricing [pricing]="packageData?.pricing"></app-inbound-pricing>
+            <div *ngIf="activeTab === 'pricing'" class="mb-2">
+                <app-inbound-pricing [pricing]="packageData?.pricing"
+                    [transport]='packageData?.transport'></app-inbound-pricing>
             </div>
         </div>
 
