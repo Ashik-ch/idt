@@ -6,7 +6,7 @@ export const routes: Routes = [
     path: 'inbound',
     children: [
       { path: '', loadComponent: () => import('./components/inbound/inbound').then(m => m.Inbound), },
-      { path: ':state', loadComponent: () => import('./components/inbound/inbound-view/inbound-view').then(m => m.InboundView), }
+      { path: ':state', loadComponent: () => import('./components/inbound/inbound-package/inbound-package').then(m => m.InboundPackage), }
     ]
   },
   {
