@@ -5,32 +5,33 @@
     </h2>
 
     <div class="space-y-8">
-        <div *ngFor="let season of pricing" class="border-2 rounded-xl p-6"
-            [class]="getSeasonClass(season.season)">
-            <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">{{ season.season }}</h3>
-
+        <div *ngFor="let season of pricing" class="rounded-xl shadow-lg p-6 border-2"
+            [ngClass]="getSeasonClass(season.season) ? 'bg-red-100 border-red-500' : 'bg-blue-100 border-blue-500'">
+            <h3 class="text-xl font-bold mb-6 text-center text-gray-900">{{ season.season }}</h3>
             <div class="overflow-x-auto">
-                <table class="w-full  text-gray-800">
+                <table class="min-w-full border-collapse text-gray-800">
                     <thead>
-                        <tr class="border-b-2 border-gray-800">
-                            <th class="text-left py-3 px-4 font-bold">Category</th>
-                            <th class="text-center py-3 px-4 font-bold">2 Pax</th>
-                            <th class="text-center py-3 px-4 font-bold">4-6 Pax</th>
-                            <th class="text-center py-3 px-4 font-bold">8-10 Pax</th>
-                            <th class="text-center py-3 px-4 font-bold">Extra Person</th>
+                        <tr [ngClass]="getSeasonClass(season.season) ? 
+                        'bg-gradient-to-r from-red-500 via-pink-500 to-red-500 text-white' :
+                        'bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-white'">
+                            <th class="text-left py-3 px-5 font-semibold rounded-tl-xl">Category</th>
+                            <th class="text-center py-3 px-5 font-semibold">2 Pax</th>
+                            <th class="text-center py-3 px-5 font-semibold">4-6 Pax</th>
+                            <th class="text-center py-3 px-5 font-semibold">8-10 Pax</th>
+                            <th class="text-center py-3 px-5 font-semibold rounded-tr-xl">Extra Person</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let category of season.categories"
-                            class="border-b hover:bg-gray-50 transition-colors">
-                            <td class="py-3 px-4 font-medium">{{ category.category }}</td>
-                            <td class="py-3 px-4 text-center font-bold text-green-600">{{
-                                formatPrice(category.twoPax) }}</td>
-                            <td class="py-3 px-4 text-center font-bold text-green-600">{{
+                            class="border-b hover:bg-gray-100 transition-colors">
+                            <td class="py-3 px-5 font-medium">{{ category.category }}</td>
+                            <td class="py-3 px-5 text-center font-bold text-green-600">{{ formatPrice(category.twoPax)
+                                }}</td>
+                            <td class="py-3 px-5 text-center font-bold text-green-600">{{
                                 formatPrice(category.fourToSixPax) }}</td>
-                            <td class="py-3 px-4 text-center font-bold text-green-600">{{
+                            <td class="py-3 px-5 text-center font-bold text-green-600">{{
                                 formatPrice(category.eightToTenPax) }}</td>
-                            <td class="py-3 px-4 text-center font-bold text-blue-600">{{
+                            <td class="py-3 px-5 text-center font-bold text-blue-600">{{
                                 formatPrice(category.extraPerson) }}</td>
                         </tr>
                     </tbody>
@@ -39,17 +40,119 @@
         </div>
     </div>
 
-    <!-- Transport Options -->
-    <div class="mt-8">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-            <span class="bg-gray-100 p-2 rounded-full mr-3">🚗</span>
-            Transport Options
-        </h3>
-        <div class="grid md:grid-cols-2 gap-4">
-            <div *ngFor="let transport of transport" class="p-4 bg-gray-50 rounded-lg border">
-                <h4 class="font-bold text-gray-800">{{ transport.pax }}</h4>
-                <p class="text-gray-600">{{ transport.description }}</p>
+
+    <div class="min-h-screen bg-gradient-to-br from-red-700 via-pink-700 to-orange-500 rounded-3xl mt-5">
+        <div *ngFor="let season of pricing"
+            class="relative rounded-3xl p-8 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg overflow-hidden group">
+            <h3
+                class="text-2xl font-extrabold text-center text-white mb-10 tracking-wide group-hover:scale-105 transition-transform">
+                {{ season.season }}
+            </h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div *ngFor="let category of season.categories" class="relative rounded-2xl p-6 flex flex-col items-center bg-white/20 backdrop-blur-md border border-white/25
+                        shadow-md hover:shadow-2xl hover:translate-y-1 transition-all duration-500 group">
+                    <div
+                        class="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500">
+                    </div>
+                    <h4 class="relative z-10 text-xl font-semibold text-white mb-4"> {{ category.category }} </h4>
+
+                    <div class="relative z-10 w-full space-y-3 text-white text-sm">
+                        <span class="flex justify-between">
+                            <p>👥 2 Pax</p>
+                            <p class="font-bold text-green-400">{{ formatPrice(category.twoPax) }}</p>
+                        </span>
+                        <span class="flex justify-between">
+                            <p>👨‍👩‍👦 4-6 Pax</p>
+                            <p class="font-bold text-green-400">{{ formatPrice(category.fourToSixPax) }}</p>
+                        </span>
+                        <span class="flex justify-between">
+                            <p>🚌 8-10 Pax</p>
+                            <p class="font-bold text-green-400">{{ formatPrice(category.eightToTenPax) }}</p>
+                        </span>
+                        <span class="flex justify-between">
+                            <p>➕ Extra Person</p>
+                            <p class="font-bold text-blue-400">{{ formatPrice(category.extraPerson) }}</p>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
+
+    <div class="space-y-12 mt-3">
+        <div *ngFor="let season of pricing" class="relative rounded-2xl p-8  shadow-xl overflow-hidden group"
+            [ngClass]="getSeasonClass(season.season) ? 'bg-red-100 border-red-500' : 'bg-blue-100 border-blue-500'">
+            <h3
+                class="text-xl font-bold text-center text-red-600 mb-10 tracking-wide group-hover:scale-105 transition-transform">
+                {{ season.season }}
+            </h3>
+            <!-- Category Cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div *ngFor="let category of season.categories" class="relative bg-white border border-red-100 rounded-2xl shadow-md p-6 flex flex-col items-center
+                        hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-red-100/30 to-pink-100/30 opacity-0 
+                          group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+
+                    <h4 class="relative z-10 text-xl font-bold text-gray-800 mb-4">
+                        {{ category.category }}
+                    </h4>
+
+                    <!-- Prices Grid -->
+                    <div class="relative z-10 space-y-3 text-center w-full">
+                        <span class="flex justify-between">
+                            <p class="text-gray-600 text-sm">👥 2 Pax</p>
+                            <p class="text-lg font-bold text-green-600">{{ formatPrice(category.twoPax) }}</p>
+                        </span>
+                        <span class="flex justify-between">
+                            <p class="text-gray-600 text-sm">👨‍👩‍👦 4-6 Pax</p>
+                            <p class="text-lg font-bold text-green-600">{{ formatPrice(category.fourToSixPax) }}</p>
+                        </span>
+                        <span class="flex justify-between">
+
+                            <p class="text-gray-600 text-sm">🚌 8-10 Pax</p>
+                            <p class="text-lg font-bold text-green-600">{{ formatPrice(category.eightToTenPax) }}</p>
+                        </span>
+                        <span class="flex justify-between">
+
+                            <p class="text-gray-600 text-sm">➕ Extra Person</p>
+                            <p class="text-lg font-bold text-blue-600">{{ formatPrice(category.extraPerson) }}</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transport Options -->
+    <div class="mt-12" data-animate="transport">
+        <h3 class="text-3xl font-extrabold text-gray-900 mb-8 flex items-center gap-3 justify-center">
+            <span class="bg-red-100 text-red-600 p-3 rounded-full shadow-md">🚗</span>
+            <span class="tracking-wide">Transport Options</span>
+        </h3>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div *ngFor="let transport of transport" class="relative group bg-white/80 backdrop-blur-lg border border-red-100 rounded-2xl shadow-md p-6 
+                      hover:shadow-xl hover:scale-[1.02] transition-all duration-500 overflow-hidden">
+
+                <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 via-white/40 to-pink-200/20 opacity-0 
+                        group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+
+                <div class="relative z-10">
+                    <h4
+                        class="text-xl font-bold text-red-600 mb-3 group-hover:text-red-700 transition-colors duration-300">
+                        {{ transport.pax }}
+                    </h4>
+                    <p class="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
+                        {{ transport.description }}
+                    </p>
+                </div>
+                <div class="absolute top-4 right-4 text-red-400 text-2xl opacity-0 group-hover:opacity-100 
+                        transform group-hover:translate-y-1 transition-all duration-500"> 🚙
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>

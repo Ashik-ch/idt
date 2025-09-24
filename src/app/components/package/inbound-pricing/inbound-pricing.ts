@@ -17,8 +17,8 @@ export class InboundPricing {
     return price.replace('₹', '₹ ');
   }
 
-  getSeasonClass(season: string): string {
-    return season.toLowerCase().includes('high') ? 'bg-red-50 border-red-200' : 'bg-blue-50 border-blue-200';
+  getSeasonClass(season: string): boolean {
+    return season.toLowerCase().includes('high') ? true : false;
   }
 }
 
