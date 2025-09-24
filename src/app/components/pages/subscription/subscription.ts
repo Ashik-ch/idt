@@ -4,15 +4,16 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-subscription',
+  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './subscription.html',
-  styleUrl: './subscription.css'
+  styleUrls: ['./subscription.css']
 })
 export class Subscription {
   email: string = '';
   phone: string = '';
 
-  @ViewChild('sectionRef', { static: true }) sectionRef!: ElementRef<HTMLElement>;
+  @ViewChild('sectionRef', { static: true }) sectionRef!: ElementRef<any>;
 
   private intersectionObserver?: IntersectionObserver;
 

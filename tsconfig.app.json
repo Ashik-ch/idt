@@ -4,7 +4,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "lib": ["ES2022", "DOM"]
   },
   "include": [
     "src/**/*.ts"
