@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class InboundItinerary {
 
-  @Input() packageData: any 
+  @Input() detailedItinerary: any 
 
   timelineData: any[] = [
     {

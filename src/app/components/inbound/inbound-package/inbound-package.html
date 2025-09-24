@@ -71,7 +71,11 @@
             </div>
 
             <div *ngIf="activeTab === 'itinerary'" class="mb-2"> 
-                <app-inbound-itinerary [packageData]="packageData?.detailedItinerary"></app-inbound-itinerary>
+                <app-inbound-itinerary [detailedItinerary]="packageData?.detailedItinerary"></app-inbound-itinerary>
+            </div>
+
+            <div *ngIf="activeTab === 'pricing'" class="mb-2"> 
+                <app-inbound-pricing [pricing]="packageData?.pricing"></app-inbound-pricing>
             </div>
         </div>
 

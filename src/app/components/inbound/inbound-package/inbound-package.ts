@@ -7,13 +7,15 @@ import { Package, travelPackages } from '../../../data/package.data';
 import { InboundOverview } from '../../package/inbound-overview/inbound-overview';
 import { NgxShineBorderComponent } from '@omnedia/ngx-shine-border';
 import { InboundItinerary } from '../../package/inbound-itinerary/inbound-itinerary';
+import { InboundPricing } from '../../package/inbound-pricing/inbound-pricing';
 
 @Component({
   selector: 'app-inbound-package',
   imports: [CommonModule, FormsModule,
-    InboundOverview, 
+    InboundOverview,
     InboundItinerary,
-    NgxShineBorderComponent 
+    NgxShineBorderComponent,
+    InboundPricing
   ],
   templateUrl: './inbound-package.html',
   styleUrl: './inbound-package.css'
