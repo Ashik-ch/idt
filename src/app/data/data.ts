@@ -43,3 +43,27 @@ export interface Feature {
         description: 'Round-the-clock assistance for worry-free travel.'
     }
 ];
+
+
+export const Services = [
+    {
+      icon: 'pi pi-home',
+      title: 'Luxury Stays',
+      desc: 'Experience stylish condos with all the comforts of home.',
+    },
+    {
+      icon: 'pi pi-shop',
+      title: 'Gourmet Dining',
+      desc: 'Savor local delicacies and world-class café culture.',
+    },
+    {
+      icon: 'pi pi-envelope',
+      title: 'Seamless Connectivity',
+      desc: 'Stay linked with easy access to transport and networks.',
+    },
+    {
+      icon: 'pi pi-phone',
+      title: 'Dedicated Assistance',
+      desc: 'Friendly experts available whenever you need guidance.',
+    },
+  ];
