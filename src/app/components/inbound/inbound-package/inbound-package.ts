@@ -6,11 +6,13 @@ import { statesData } from '../../../data/inbound.data';
 import { Package, travelPackages } from '../../../data/package.data';
 import { InboundOverview } from '../../package/inbound-overview/inbound-overview';
 import { NgxShineBorderComponent } from '@omnedia/ngx-shine-border';
+import { InboundItinerary } from '../../package/inbound-itinerary/inbound-itinerary';
 
 @Component({
   selector: 'app-inbound-package',
   imports: [CommonModule, FormsModule,
     InboundOverview, 
+    InboundItinerary,
     NgxShineBorderComponent 
   ],
   templateUrl: './inbound-package.html',

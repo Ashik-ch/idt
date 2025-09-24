@@ -10,7 +10,7 @@
                 Back to Inbound Packages
             </a>
         </div>
-        <om-shine-border borderRadius="1rem"> 
+        <om-shine-border borderRadius="1rem">
             <div class="text-center">
                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div data-animate="hero" class="text-center space-y-6">
@@ -68,6 +68,10 @@
 
             <div *ngIf="activeTab === 'overview'" class="mb-2">
                 <app-inbound-overview></app-inbound-overview>
+            </div>
+
+            <div *ngIf="activeTab === 'itinerary'" class="mb-2">
+                <app-inbound-itinerary></app-inbound-itinerary>
             </div>
         </div>
 
