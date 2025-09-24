@@ -51,3 +51,16 @@
         </div>
     </div>
 </section>
+
+<section data-animate="highlights" class="bg-white rounded-3xl shadow-xl p-10">
+    <h2 class="text-4xl font-extrabold text-gray-900 mb-10">
+        <span class="bg-green-100 p-3 rounded-full mr-4">⭐</span>
+        Package Highlights
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+        <div *ngFor="let highlight of packageData.highlights" class="relative p-6 rounded-2xl shadow-lg text-white overflow-hidden 
+                  hover:scale-105 transition-transform duration-300  bg-gradient-to-r from-red-500 to-orange-500">
+            <p class="relative z-10 font-semibold text-lg text-center drop-shadow-lg"> {{ highlight }} </p>
+        </div>
+    </div>
+</section>
