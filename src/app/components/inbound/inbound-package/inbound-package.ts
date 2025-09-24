@@ -7,7 +7,9 @@ import { Package, travelPackages } from '../../../data/package.data';
 import { InboundOverview } from '../../package/inbound-overview/inbound-overview';
 import { NgxShineBorderComponent } from '@omnedia/ngx-shine-border';
 import { InboundItinerary } from '../../package/inbound-itinerary/inbound-itinerary';
-import { InboundPricing } from '../../package/inbound-pricing/inbound-pricing';
+import { InboundPricing } from '../../package/inbound-pricing/inbound-pricing'; 
+import { InboundSummary } from '../../package/inbound-summary/inbound-summary';
+import { InboundHotels } from '../../package/inbound-hotels/inbound-hotels';
 
 @Component({
   selector: 'app-inbound-package',
@@ -15,7 +17,9 @@ import { InboundPricing } from '../../package/inbound-pricing/inbound-pricing';
     InboundOverview,
     InboundItinerary,
     NgxShineBorderComponent,
-    InboundPricing
+    InboundPricing,
+    InboundHotels,
+    InboundSummary,
   ],
   templateUrl: './inbound-package.html',
   styleUrl: './inbound-package.css'

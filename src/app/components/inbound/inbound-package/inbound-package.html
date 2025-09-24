@@ -78,6 +78,13 @@
                 <app-inbound-pricing [pricing]="packageData?.pricing"
                     [transport]='packageData?.transport'></app-inbound-pricing>
             </div>
+            <div *ngIf="activeTab === 'hotels'" class="mb-2">
+                <app-inbound-hotels [hotels]="packageData?.hotels"
+                    [transport]='packageData?.transport'></app-inbound-hotels>
+            </div>
+            <div *ngIf="activeTab === 'details'" class="mb-2">
+                <app-inbound-summary [details]="packageData?.supplementalAttractions"></app-inbound-summary>
+            </div>
         </div>
 
 
