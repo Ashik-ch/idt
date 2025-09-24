@@ -1,1 +1,47 @@
-<p>inbound works!</p>
+<div class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">
+                Inbound Travel Packages
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover the beauty of India with our carefully curated domestic travel packages.
+                From the snow-capped Himalayas to the pristine beaches of the south, explore diverse landscapes and
+                cultures.
+            </p>
+        </div>
+
+        <app-inbound-map></app-inbound-map>
+
+        <!-- Quick Access Regions -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Popular Inbound Packages
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div *ngFor="let state of inboundPackages" class="group cursor-pointer"
+                    (click)="navigateToState(state.id)">
+                    <div class="rounded-xl p-6 text-white hover:shadow-lg transition-all duration-200 relative overflow-hidden"
+                        [ngClass]="state.gradient ? 'bg-gradient-to-br ' + state.gradient : ''"
+                        [ngStyle]="state.bgImage ? { 'background-image': 'url(' + state.bgImage + ')', 'background-size': 'cover', 'background-position': 'center' } : {}">
+                        <div *ngIf="state.bgImage"
+                            class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold">{{ state.name }}</h3>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                            <p class="mb-2">{{ state.tagline }}</p>
+                            <p class="text-sm opacity-90">{{ state.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

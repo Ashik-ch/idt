@@ -201,3 +201,52 @@ export const travelPackages: Package[] = [
     specialOffers: ['Honeymoon offer: cake, flower bed, candlelight dinner (terms apply)']
   }
 ];
+
+
+export const inboundPackages = [
+  {
+    id: 'kerala',
+    name: 'Kerala',
+    gradient: 'from-green-400 to-green-600',
+    tagline: "God's Own Country",
+    description: 'Backwaters, Tea Gardens, Ayurveda',
+    bgImage: 'assets/images/l.jpeg'
+  },
+  {
+    id: 'karnataka',
+    name: 'Karnataka',
+    gradient: 'from-blue-400 to-blue-600',
+    tagline: 'One State Many Worlds',
+    description: 'Ancient Temples, Coffee Estates, Beaches',
+    bgImage: 'assets/images/m.jpeg'
+  },
+  {
+    id: 'tamil-nadu',
+    name: 'Tamil Nadu',
+    gradient: 'from-orange-400 to-orange-600',
+    tagline: 'Land of Temples',
+    description: 'Dravidian Architecture, Hill Stations',
+    bgImage: 'assets/images/k.jpg'
+  },
+  {
+    id: 'goa',
+    name: 'Goa',
+    gradient: 'from-yellow-400 to-yellow-600',
+    tagline: 'Pearl of the Orient',
+    description: 'Beaches, Nightlife, Portuguese Heritage',
+  },
+  {
+    id: 'north-india',
+    name: 'North India',
+    gradient: 'from-red-400 to-red-600',
+    tagline: 'Himalayan Paradise',
+    description: 'Mountains, Temples, Heritage Sites',
+  },
+  {
+    id: 'rajasthan',
+    name: 'Rajasthan',
+    gradient: 'from-purple-400 to-purple-600',
+    tagline: 'Land of Kings',
+    description: 'Palaces, Forts, Desert Safaris',
+  }
+];
