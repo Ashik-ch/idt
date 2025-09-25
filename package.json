@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "deploy": "ng build --configuration production --base-href=/idt/ && npx copyfiles dist/idt/browser/index.html dist/idt/browser/404.html && npx ngh --dir=dist/idt/browser"
+    "test": "ng test"
   },
   "prettier": {
     "printWidth": 100,
