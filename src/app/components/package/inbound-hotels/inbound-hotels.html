@@ -1,1 +1,26 @@
-<p>inbound-hotels works!</p>
+<section data-animate="hotels" class="bg-white rounded-2xl shadow-xl p-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+        <span class="bg-orange-100 p-3 rounded-full mr-4">🏨</span>
+        Hotels & Resorts
+    </h2>
+
+    <div class="space-y-6">
+        <div *ngFor="let hotel of hotels" class="border rounded-xl p-6 hover:shadow-lg transition-shadow">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ hotel.destination }}</h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div *ngFor="let category of getObjectKeys(hotel.categories)" class="p-4 rounded-lg border-2"
+                    [class]="getCategoryClass(category)">
+                    <h4 class="font-bold text-gray-800 mb-3">{{ category }}</h4>
+                    <ul class="space-y-2">
+                        <li *ngFor="let hotelName of hotel.categories[category]"
+                            class="text-sm text-gray-600 flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">🏨</span>
+                            {{ hotelName }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
