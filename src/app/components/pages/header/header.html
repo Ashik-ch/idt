@@ -11,5 +11,22 @@
       <a routerLink="/outbound" class="hover:text-[color:var(--brand)]">Outbound</a>
       <a routerLink="/contact" class="hover:text-[color:var(--brand)]">Contact</a>
     </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden p-2 rounded-lg border border-gray-300 hover:bg-gray-100"
+      (click)="isMenuOpen = !isMenuOpen">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
   </div>
+
+  <!-- Mobile Nav -->
+  <nav *ngIf="isMenuOpen" class="md:hidden px-4 pb-3 space-y-2 text-sm bg-white border-t">
+    <a routerLink="/" (click)="isMenuOpen=false" class="block py-2 hover:text-[color:var(--brand)]">Home</a>
+    <a routerLink="/inbound" (click)="isMenuOpen=false" class="block py-2 hover:text-[color:var(--brand)]">Inbound</a>
+    <a routerLink="/outbound" (click)="isMenuOpen=false" class="block py-2 hover:text-[color:var(--brand)]">Outbound</a>
+    <a routerLink="/contact" (click)="isMenuOpen=false" class="block py-2 hover:text-[color:var(--brand)]">Contact</a>
+  </nav>
+
 </header>
