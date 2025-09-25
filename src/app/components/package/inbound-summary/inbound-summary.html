@@ -76,46 +76,50 @@
         </div>
     </section>
 
-    <section data-animate="terms" class="bg-white rounded-2xl shadow-xl p-8 space-y-8">
+    <section data-animate="terms" class="bg-white backdrop-blur-md rounded-3xl shadow-2xl p-10 space-y-10">
+        <!-- Inclusions -->
         <div>
-            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Inclusions</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                <div *ngFor="let item of inclusions" class="flex items-center text-yellow-500">
-                    <span class="text-green-500 m-1">✓</span>
+            <h2 class="text-3xl font-bold text-gray-900 mb-3 border-b pb-3">Inclusions</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div *ngFor="let item of inclusions"
+                    class="flex items-center gap-3 bg-green-50/70 rounded-lg px-4 py-2 shadow-sm hover:shadow-md transition">
+                    <span class="text-green-600 text-xl">✔</span>
+                    <span class="text-gray-800 font-medium">{{ item }}</span>
+                </div>
+            </div>
+        </div>
 
-                    <span class="text-gray-700">{{ item }}</span>
+        <!-- Exclusions -->
+        <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-3 border-b pb-3">Exclusions</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div *ngFor="let item of exclusions"
+                    class="flex items-center gap-3 bg-red-50/70 rounded-lg px-4 py-2 shadow-sm hover:shadow-md transition">
+                    <span class="text-red-500 text-xl">✖</span>
+                    <span class="text-gray-800 font-medium">{{ item }}</span>
                 </div>
             </div>
         </div>
+
+        <!-- Child Policy -->
         <div>
-            <h2 class="text-3xl font-semibold mb-4 text-gray-800">Exclusions</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                <div *ngFor="let item of exclusions" class="flex items-center text-yellow-500">
-                    <span class="text-red-500 m-1">✗</span>
-                    <span class="text-gray-700">{{ item }}</span>
-                </div>
-            </div>
-        </div>
-        <hr class="border-gray-200">
-        <div>
-            <h2 class="text-3xl font-semibold mb-4 text-gray-800">Child Policy</h2>
-            <div class="flex flex-wrap gap-3">
-                <div *ngFor="let childPolicy of childPolicy"
-                    class="flex items-center gap-2 px-4 py-2 border rounded-lg bg-red-50 text-gray-700 hover:bg-yellow-50 cursor-pointer transition">
+            <h2 class="text-3xl font-bold text-gray-900 mb-3 border-b pb-3">Child Policy</h2>
+            <div class="flex flex-wrap gap-4">
+                <div *ngFor="let policy of childPolicy"
+                    class="flex items-center gap-2 px-4 py-2 bg-yellow-50/70 rounded-xl font-medium text-gray-800 hover:bg-yellow-100 shadow-sm transition cursor-pointer">
                     <span class="text-yellow-500 text-lg">🎯</span>
-                    <span>{{ childPolicy }}</span>
+                    <span>{{ policy }}</span>
                 </div>
             </div>
         </div>
-        <hr class="border-gray-200">
+
+        <!-- Special Offers -->
         <div>
-            <h2 class="text-3xl font-semibold mb-4 text-black">Special Offer</h2>
-            <div class="flex flex-wrap gap-3">
-                <div *ngFor="let specialOffers of specialOffers" class="flex items-center gap-2 px-4 py-2  ">
-                    <span
-                        class="rounded rounded-2xl p-2  text-gray-700 outline outline-1 outline-red-500 hover:bg-red-50 cursor-pointer transition ">
-                        {{ specialOffers }}
-                    </span>
+            <h2 class="text-3xl font-bold text-gray-900 mb-3 border-b pb-3">Special Offers</h2>
+            <div class="flex flex-wrap gap-4">
+                <div *ngFor="let offer of specialOffers"
+                    class="px-4 py-2 bg-red-50/60 rounded-2xl font-medium text-red-600 hover:bg-red-100 shadow-sm transition cursor-pointer">
+                    {{ offer }}
                 </div>
             </div>
         </div>
