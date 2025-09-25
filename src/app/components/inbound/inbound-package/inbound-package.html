@@ -83,7 +83,9 @@
                     [transport]='packageData?.transport'></app-inbound-hotels>
             </div>
             <div *ngIf="activeTab === 'details'" class="mb-2">
-                <app-inbound-summary [details]="packageData?.supplementalAttractions"></app-inbound-summary>
+                <app-inbound-summary [details]="packageData?.supplementalAttractions"
+                    [specialOffers]="packageData?.specialOffers" [inclusions]="packageData?.inclusions"
+                    [exclusions]="packageData?.exclusions" [childPolicy]="packageData?.childPolicy"></app-inbound-summary>
             </div>
         </div>
 

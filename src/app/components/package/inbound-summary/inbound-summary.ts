@@ -10,5 +10,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class InboundSummary {
   @Input() details :any
+  @Input() specialOffers :any
+  @Input() exclusions :any
+  @Input() inclusions :any
+  @Input() childPolicy :any
 
 }

@@ -35,6 +35,7 @@ export interface Package {
   highlights: string[];
   hotels: {
     destination: string;
+    image: string;
     categories: { [key: string]: string[] };
   }[];
   childPolicy: string[];
@@ -157,9 +158,9 @@ export const travelPackages: Package[] = [
     inclusions: [
       'Local English-speaking driver',
       'Twin/double accommodation with daily breakfast + dinner',
+      'Entry fees, taxes, tolls, guides at selected locations',
       'Meals as per itinerary',
       'Transport',
-      'Entry fees, taxes, tolls, guides at selected locations',
     ],
     exclusions: [
       'International/domestic flights & airport taxes',
@@ -180,6 +181,7 @@ export const travelPackages: Package[] = [
     hotels: [
       {
         destination: 'Ooty (2N)',
+        image: 'assets/images/a.jpg',
         categories: {
           '3-Star': ['Nahar Nilgiris Resort', 'Treebo Windsor Heights Resort'],
           '4-Star': ['Garden Manor Resort', 'Fortune Retreats', 'The Monarch'],
@@ -189,6 +191,7 @@ export const travelPackages: Package[] = [
       },
       {
         destination: 'Munnar (2N)',
+        image: 'assets/images/b.jpg',
         categories: {
           '3-Star': ['West Wood Resort', 'Eastend Hotel'],
           '4-Star': ['Rivulet Resort', 'Elephant Passage Resort'],
@@ -198,6 +201,7 @@ export const travelPackages: Package[] = [
       },
       {
         destination: 'Thekkady (1N)',
+        image: 'assets/images/c.jpg',
         categories: {
           '3-Star': ['Abad Green Forest', 'Pepper Vine Resort'],
           '4-Star': ['Mountain Courtyard Resort', 'Forest Canopy Resort'],
@@ -207,6 +211,7 @@ export const travelPackages: Package[] = [
       },
       {
         destination: 'Kumarakom Houseboat (1N)',
+        image: 'assets/images/d.jpg',
         categories: {
           'Standard': ['A/C Standard Houseboat'],
           'Deluxe': ['A/C Deluxe Houseboat (Silver Flag)'],
