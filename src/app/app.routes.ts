@@ -9,7 +9,6 @@ export const routes: Routes = [
       { path: ':state', loadComponent: () => import('./components/inbound/inbound-package/inbound-package').then(m => m.InboundPackage), }
     ]
   },
-  {
-    path: 'outbound', loadComponent: () => import('./components/outbound/outbound/outbound').then(m => m.Outbound),
-  },
+  { path: 'outbound', loadComponent: () => import('./components/outbound/outbound/outbound').then(m => m.Outbound), },
+  { path: 'contact', loadComponent: () => import('./components/pages/contact/contact').then(m => m.Contact), },
 ];

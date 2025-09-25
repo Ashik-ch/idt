@@ -1,1 +1,74 @@
-<p>contact works!</p>
+<section
+    class="min-h-screen flex items-center justify-center p-6 bg-gradient-to-br from-red-600 to-red-700 relative overflow-hidden">
+    <!-- Decorative Wave Overlay -->
+    <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="#ffffff" fill-opacity="1"
+                d="M0,224L60,186.7C120,149,240,75,360,85.3C480,96,600,192,720,229.3C840,267,960,245,1080,256C1200,267,1320,309,1380,330.7L1440,352L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+            </path>
+        </svg>
+    </div>
+
+    <!-- Unified Glassy Container -->
+    <div
+        class="relative max-w-6xl w-full bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden grid md:grid-rows-[auto_auto] md:grid-cols-2 gap-6">
+
+        <!-- Top: Info + Form -->
+        <div class="md:col-span-2 grid md:grid-cols-2 gap-6 p-8">
+
+            <!-- Left: Info -->
+            <div class="relative space-y-6 bg-white/30 backdrop-blur-md rounded-2xl p-6 shadow-lg">
+                <div class="flex items-start space-x-4 rounded-lg p-3 bg-white/20">
+                    <span class="text-red-600 text-3xl">📍</span>
+                    <div>
+                        <h4 class="font-bold text-white drop-shadow-md">Location</h4>
+                        <p class="text-gray-100 drop-shadow-sm">Kalpeta, Andaman</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 rounded-lg p-3 bg-white/20">
+                    <span class="text-red-600 text-3xl">📞</span>
+                    <div>
+                        <h4 class="font-bold text-white drop-shadow-md">Phone</h4>
+                        <p class="text-gray-100 drop-shadow-sm">+91 98765 43210</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 rounded-lg p-3 bg-white/20">
+                    <span class="text-red-600 text-3xl">⏰</span>
+                    <div>
+                        <h4 class="font-bold text-white drop-shadow-md">Hours</h4>
+                        <p class="text-gray-100 drop-shadow-sm">Mon - Fri: 9 AM - 6 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <div class="bg-gray-50 rounded-2xl p-6 shadow-lg flex flex-col space-y-4">
+                <h3 class="text-2xl font-bold text-gray-900">Connect</h3>
+                <form class="space-y-3">
+                    <input type="text" placeholder="Full Name"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 focus:outline-none">
+                    <input type="email" placeholder="Email"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 focus:outline-none">
+                    <textarea rows="4" placeholder="Comment or message"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 focus:outline-none"></textarea>
+                    <button type="submit"
+                        class="w-full bg-red-600 text-white font-semibold py-2 rounded-lg hover:bg-red-700 transition">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Bottom: Map -->
+        <div class="md:col-span-2 relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-lg p-4">
+            <iframe class="absolute inset-0 w-full h-full rounded-2xl"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.5101385625236!2d92.62358857489201!3d11.931272191686924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a008f78b3c2e0df%3A0x9fcd0d0f32a093d2!2sKalapet%2C%20Andaman%20and%20Nicobar%20Islands%2C%20India!5e0!3m2!1sen!2sin!4v1695675000000!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-red-600/20 via-white/10 to-transparent pointer-events-none rounded-2xl">
+            </div>
+        </div>
+
+    </div>
+</section>
