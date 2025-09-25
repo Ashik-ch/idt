@@ -1,41 +1,37 @@
 <div class="min-h-screen py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Back Button -->
-        <div class="mb-6">
-            <a routerLink="/inbound"
-                class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-                Back to Inbound Packages
-            </a>
-        </div>
-        <om-shine-border borderRadius="1rem">
-            <div class="text-center">
-                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div data-animate="hero" class="text-center space-y-6">
-                        <h3 class="text-3xl md:text-4xl font-bold mb-4 transform transition-all duration-1000">
-                            {{ packageData?.title }}
-                        </h3>
-                        <div class="flex items-center justify-center space-x-4 text-xl">
-                            <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
-                                📅 {{ packageData?.duration }}
-                            </span>
-                            <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
-                                <!-- 🗺️ {{ stateParam | titlecase }} -->
-                            </span>
-                        </div>
-                        <p class="text-xl md:text-xl max-w-4xl mx-auto leading-relaxed opacity-90 text-medium py-3">
-                            {{ packageData?.summary }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </om-shine-border>
+    <div class="mb-3 ml-6">
+        <a routerLink="/inbound"
+            class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Inbound Packages
+        </a>
+    </div>
+    <div
+        class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-red-500 to-pink-600  p-8 mb-12 text-white text-center">
+        <div class="text-center relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div data-animate="hero" class="text-center space-y-6">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4 transform transition-all duration-1000">
+                    {{ packageData?.title }}
+                </h3>
+                <div class="flex items-center justify-center space-x-4 text-xl">
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                        📅 {{ packageData?.duration }}
+                    </span>
 
-        <!-- Today's Deal Banner -->
-        <div class="bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl p-8 my-12 text-white text-center">
-            <div class="flex items-center justify-center mb-4">
+                </div>
+                <p class="text-xl md:text-xl max-w-4xl mx-auto leading-relaxed opacity-90 text-medium py-3">
+                    {{ packageData?.summary }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 r bg-gray-800 p-4">
+            <!-- Today's Deal Banner -->
+        <om-shine-border borderRadius="1rem" class="text-white text-center m-4">
+            <div class="flex items-center justify-center mb-4 p-4">
                 <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -43,22 +39,22 @@
                 <h2 class="text-3xl font-bold">Today's Deal!</h2>
             </div>
             <p class="text-xl mb-6">Special discounts on {{ stateName }} packages - Limited time offer!</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center p-4">
                 <button (click)="scrollToPackages()"
                     class="bg-white hover:bg-gray-100 text-red-600 px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl">
                     View Deals
                 </button>
             </div>
-        </div>
+        </om-shine-border>
 
-        <div class="min-h-screen">
+        <section class="min-h-screen">
             <!-- Navigation Tabs -->
-            <div class="sticky top-0 z-40 bg-white shadow-lg border-b">
+            <div class="sticky top-0 z-40   shadow-lg mb-4">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <nav class="flex space-x-8 overflow-x-auto justify-center">
                         <button *ngFor="let tab of ['overview', 'itinerary', 'pricing', 'hotels', 'details']"
                             (click)="setActiveTab(tab)"
-                            [class]="'m-3 py-2 px-4 border-b-2 rounded-xl font-medium text-sm whitespace-nowrap transition-colors duration-200' + 
+                            [class]="' m-3 py-2 px-4 border-2 bg-black rounded-xl font-medium text-sm whitespace-nowrap transition-colors duration-200' + 
                            (activeTab === tab ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300')">
                             {{ tab | titlecase }}
                         </button>
@@ -67,7 +63,7 @@
             </div>
 
             <div *ngIf="activeTab === 'overview'" class="mb-2">
-                <app-inbound-overview></app-inbound-overview>
+                <app-inbound-overview [stateHighlights]="stateHighlights"></app-inbound-overview>
             </div>
 
             <div *ngIf="activeTab === 'itinerary'" class="mb-2">
@@ -78,82 +74,75 @@
                 <app-inbound-pricing [pricing]="packageData?.pricing"
                     [transport]='packageData?.transport'></app-inbound-pricing>
             </div>
+
             <div *ngIf="activeTab === 'hotels'" class="mb-2">
                 <app-inbound-hotels [hotels]="packageData?.hotels"
                     [transport]='packageData?.transport'></app-inbound-hotels>
             </div>
+
             <div *ngIf="activeTab === 'details'" class="mb-2">
                 <app-inbound-summary [details]="packageData?.supplementalAttractions"
                     [specialOffers]="packageData?.specialOffers" [inclusions]="packageData?.inclusions"
-                    [exclusions]="packageData?.exclusions" [childPolicy]="packageData?.childPolicy"></app-inbound-summary>
+                    [exclusions]="packageData?.exclusions"
+                    [childPolicy]="packageData?.childPolicy"></app-inbound-summary>
             </div>
-        </div>
+        </section>
 
 
-
-
-
-        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
-            <div class="py-16 bg-white">
-                <div class="max-w-6xl mx-auto px-4">
-                    <div class="flex justify-center text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800"> Popular Destination of
-                            {{stateName}}
-                        </h2>
+        <!-- Best Time to Visit -->
+        <section class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 my-12">
+            <h2 class="text-2xl font-bold text-gray-100 mb-6">Best Time to Visit {{ stateName }}</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div *ngFor="let season of bestTimeToVisit" class="text-center p-4">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                        [ngClass]="season.color">
+                        <span class="text-white font-bold">{{ season.months }}</span>
                     </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-                        <div class="relative group" *ngFor="let highlight of stateHighlights">
-                            <div class="block overflow-hidden shadow-md">
-                                <img [src]="highlight.img" [alt]="highlight.title"
-                                    class="w-full h-96 object-cover transform group-hover:scale-105 transition duration-300">
-
-                                <div
-                                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4 text-white">
-                                    <h3 class="text-lg font-semibold">{{ highlight.title }}</h3>
-                                    <span class="text-sm">{{ highlight.description }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-2">{{ season.name }}</h3>
+                    <p class="text-gray-50 text-sm">{{ season.description }}</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Popular Gallery -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Gallery </h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div *ngFor="let destination of popularDestinations" class="group cursor-pointer">
-                        <div class="relative overflow-hidden rounded-xl">
+        <!-- Popular Gallery -->
+        <section data-animate="gallery" class="bg-white rounded-3xl shadow-xl">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2  p-3 flex items-center">
+                <span class="bg-purple-100 p-3 pt-2 pb-4 rounded-full mr-3">📸</span>
+                Gallery
+            </h2>
+ 
+            <div class="relative overflow-hidden w-full">
+                <!-- <div
+                    class="pointer-events-none absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-black/60 to-transparent z-10">
+                </div>
+                <div
+                    class="pointer-events-none absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-black/60 to-transparent z-10">
+                </div> --> 
+                <div class="flex animate-marquee space-x-6">
+                    <!-- First Loop -->
+                    <div *ngFor="let highlight of stateHighlights" class="flex-shrink-0 w-80">
+                        <div class="relative group rounded-xl overflow-hidden shadow-lg">
+                            <img [src]="highlight.img" [alt]="highlight.title"
+                                class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500">
+                            <!-- <div
+                                    class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                    <h3 class="text-white text-lg font-semibold">{{ highlight.title }}</h3>
+                                </div> -->
+                        </div>
+                    </div> >
+                    <div *ngFor="let highlight of stateHighlights" class="flex-shrink-0 w-80">
+                        <div class="relative group rounded-xl overflow-hidden shadow-lg">
+                            <img [src]="highlight.img" [alt]="highlight.title"
+                                class="w-full h-56 object-cover transform group-hover:scale-105 transition duration-500">
                             <div
-                                class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
-                                <span class="text-white text-xl font-semibold">{{ destination.name }}</span>
+                                class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <h3 class="text-white text-lg font-semibold">{{ highlight.title }}</h3>
                             </div>
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-200">
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ destination.name }}</h3>
-                            <p class="text-gray-600">{{ destination.description }}</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Best Time to Visit -->
-            <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 mb-12">
-                <h2 class="text-2xl font-bold text-gray-100 mb-6">Best Time to Visit {{ stateName }}</h2>
-                <div class="grid md:grid-cols-4 gap-6">
-                    <div *ngFor="let season of bestTimeToVisit" class="text-center p-4">
-                        <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
-                            [ngClass]="season.color">
-                            <span class="text-white font-bold">{{ season.months }}</span>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-100 mb-2">{{ season.name }}</h3>
-                        <p class="text-gray-50 text-sm">{{ season.description }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
+        
     </div>
+</div>

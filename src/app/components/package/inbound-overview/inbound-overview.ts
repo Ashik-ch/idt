@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Package, travelPackages } from '../../../data/package.data';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './inbound-overview.css'
 })
 export class InboundOverview {
+  @Input() stateHighlights: any;
 
   ackageData: Package | null = null;
   stateParam: string = '';
@@ -28,17 +29,17 @@ export class InboundOverview {
     });
   }
 
-  
+
   private loadPackageData(): void {
     if (this.stateParam) {
       this.packageData = travelPackages.find(pkg =>
         pkg.id.toLowerCase() === this.stateParam.toLowerCase()
       ) || null;
 
-      if (!this.packageData) { 
+      if (!this.packageData) {
         this.router.navigate(['/inbound']);
       }
     }
   }
 }
- 
+
