@@ -7,7 +7,7 @@ module.exports = {
         brand: '#e11d48',
       },
       fontFamily: {
-        sans: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
       }
     },
   },
