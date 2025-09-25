@@ -1,4 +1,4 @@
-<div class="min-h-screen py-8">
+<div class="min-h-screen py-6">
     <div class="mb-3 ml-6">
         <a routerLink="/inbound"
             class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-200">
@@ -9,7 +9,7 @@
         </a>
     </div>
     <div
-        class=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-red-500 to-pink-600  p-8 mb-12 text-white text-center">
+        class="rounded-2xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-red-500 to-pink-600  p-8 mb-12 text-white text-center">
         <div class="text-center relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div data-animate="hero" class="text-center space-y-6">
                 <h3 class="text-3xl md:text-4xl font-bold mb-4 transform transition-all duration-1000">
@@ -28,8 +28,8 @@
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 r bg-gray-800 p-4">
-            <!-- Today's Deal Banner -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 r bg-gray-800 p-6 rounded-2xl">
+        <!-- Today's Deal Banner -->
         <om-shine-border borderRadius="1rem" class="text-white text-center m-4">
             <div class="flex items-center justify-center mb-4 p-4">
                 <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,13 +49,13 @@
 
         <section class="min-h-screen">
             <!-- Navigation Tabs -->
-            <div class="sticky top-0 z-40   shadow-lg mb-4">
+            <div class="sticky top-0 z-40 shadow-lg mb-4">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <nav class="flex space-x-8 overflow-x-auto justify-center">
                         <button *ngFor="let tab of ['overview', 'itinerary', 'pricing', 'hotels', 'details']"
                             (click)="setActiveTab(tab)"
-                            [class]="' m-3 py-2 px-4 border-2 bg-black rounded-xl font-medium text-sm whitespace-nowrap transition-colors duration-200' + 
-                           (activeTab === tab ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300')">
+                            [class]="' m-3 py-2 px-4 bg-white rounded-xl font-medium text-sm whitespace-nowrap transition-colors duration-200' + 
+                           (activeTab === tab ? 'border-blue-500 text-red-600' : 'border-transparent text-gray-800 hover:text-gray-800 hover:border-gray-300')">
                             {{ tab | titlecase }}
                         </button>
                     </nav>
@@ -91,7 +91,11 @@
 
         <!-- Best Time to Visit -->
         <section class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 my-12">
-            <h2 class="text-2xl font-bold text-gray-100 mb-6">Best Time to Visit {{ stateName }}</h2>
+            <!-- <h2 class="text-2xl font-bold text-gray-100 mb-6">Best Time to Visit {{ stateName }}</h2> -->
+            <h2 class="text-3xl font-bold text-white mb-2  p-3 flex items-center">
+                <span class="bg-white p-3 pt-2 pb-4 rounded-full mr-3">🗓️</span>
+                Best Time to Visit {{ stateName }}
+            </h2>
             <div class="grid md:grid-cols-4 gap-6">
                 <div *ngFor="let season of bestTimeToVisit" class="text-center p-4">
                     <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -105,19 +109,19 @@
         </section>
 
         <!-- Popular Gallery -->
-        <section data-animate="gallery" class="bg-white rounded-3xl shadow-xl">
+        <section data-animate="gallery" class="bg-white rounded-3xl shadow-xl py-4 mb-4">
             <h2 class="text-3xl font-bold text-gray-900 mb-2  p-3 flex items-center">
                 <span class="bg-purple-100 p-3 pt-2 pb-4 rounded-full mr-3">📸</span>
                 Gallery
             </h2>
- 
+
             <div class="relative overflow-hidden w-full">
                 <!-- <div
                     class="pointer-events-none absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-black/60 to-transparent z-10">
                 </div>
                 <div
                     class="pointer-events-none absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-black/60 to-transparent z-10">
-                </div> --> 
+                </div> -->
                 <div class="flex animate-marquee space-x-6">
                     <!-- First Loop -->
                     <div *ngFor="let highlight of stateHighlights" class="flex-shrink-0 w-80">
@@ -143,6 +147,6 @@
                 </div>
             </div>
         </section>
-        
+
     </div>
 </div>

@@ -213,16 +213,16 @@ export const travelPackages: Package[] = [
         destination: 'Kumarakom Houseboat (1N)',
         image: 'assets/images/d.jpg',
         categories: {
-          'Standard': ['A/C Standard Houseboat'],
-          'Deluxe': ['A/C Deluxe Houseboat (Silver Flag)'],
-          'Premium': ['A/C Premium Houseboat (Golden Flag)'],
-          'Luxury': ['Full-time A/C Luxury Houseboat (Platinum)'],
+          'Standard': ['A/C', 'Standard Houseboat'],
+          'Deluxe': ['A/C Deluxe Houseboat', ' (Silver Flag)'],
+          'Premium': ['A/C Premium Houseboat', ' (Golden Flag)'],
+          'Luxury': ['Full-time A/C', 'Luxury Houseboat (Platinum)'],
         },
       },
     ],
     childPolicy: [
-      '5 years < : Free of cost',
-      '5 years > : Extra person charge with extra bed',
+      'Below 5 years : Free of cost',
+      'Above 5 years : Extra person charge with extra bed',
     ],
     transport: [
       { pax: '2 Pax', description: 'A/C Sedan car (Toyota Etios/Swift Dzire)' },
