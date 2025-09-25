@@ -20,7 +20,8 @@
                     class="px-6 py-2 rounded-full bg-red-500 text-white font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105">
                     Inbound Packages
                 </a>
-                <a routerLink="/outbound" class="px-6 py-2 rounded-full border-2 border-red-500 text-red-500 sm:bg-red-500 sm:text-white font-semibold hover:bg-white hover:text-red-600 transition transform hover:scale-105">
+                <a routerLink="/outbound"
+                    class="px-6 py-2 rounded-full border-2 border-red-500 text-red-500 sm:bg-red-500 sm:text-white font-semibold hover:bg-white hover:text-red-600 transition transform hover:scale-105">
                     Outbound Tour
                 </a>
             </div>
@@ -34,3 +35,12 @@
 
 <app-service></app-service>
 <app-subscription></app-subscription>
+
+<div *ngIf="isSubscriptionOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-red-500 rounded-xl shadow-lg w-full max-w-md p-6 relative">
+        <button (click)="isSubscriptionOpen = false" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"> ✕
+        </button>
+        <app-subscription [modal]=true></app-subscription>
+
+    </div>
+</div>

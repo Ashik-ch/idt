@@ -1,6 +1,8 @@
 <section #sectionRef class="w-full">
-    <div class="relative isolate overflow-hidden bg-gradient-to-br from-red-600 to-red-700">
-        <!-- Decorative wave / overlay -->
+    <div class="relative isolate overflow-hidden" [ngClass]="modal 
+    ? 'relative isolate overflow-hidden bg-red-500' 
+    : 'relative isolate overflow-hidden bg-gradient-to-br from-red-600 to-red-700'">
+        @if(!modal){
         <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" aria-hidden="true">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
                 preserveAspectRatio="none">
@@ -9,8 +11,9 @@
                 </path>
             </svg>
         </div>
+        }
 
-        <div class="relative z-10 mx-auto max-w-5xl px-6 py-16 sm:py-20 lg:py-24 text-center text-white">
+        <div class="relative z-10 mx-auto max-w-5xl px-6  text-center text-white" [ngClass]="modal? 'py-0' :' py-16'" > 
             <h2 class="text-2xl sm:text-4xl lg:text-5   xl font-bold tracking-tight">
                 Stay Updated With Our Travel Offers
             </h2>
@@ -19,7 +22,8 @@
             </p>
 
             <form (ngSubmit)="onSubmit()" role="form" aria-label="Subscription form" class="mt-8">
-                <div class="mx-auto max-w-3xl flex flex-col gap-3 sm:gap-4 md:flex-row md:items-stretch">
+                <div class="mx-auto max-w-3xl gap-3 sm:gap-4"
+                    [ngClass]="modal ? 'flex flex-col' : 'flex flex-col md:flex-row md:items-stretch'">
                     <!-- Email input -->
                     <label class="sr-only" for="email">Email address</label>
                     <div class="relative flex-1">
@@ -53,6 +57,7 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
 </section>

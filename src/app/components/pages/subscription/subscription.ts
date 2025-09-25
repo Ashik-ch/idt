@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class Subscription {
   email: string = '';
   phone: string = '';
+  @Input() modal: boolean = false;
 
   @ViewChild('sectionRef', { static: true }) sectionRef!: ElementRef<any>;
 
@@ -62,6 +63,3 @@ export class Subscription {
     console.log('Subscribe:', { email: this.email, phone: this.phone });
   }
 }
-
-
- 
