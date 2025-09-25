@@ -1,13 +1,13 @@
 {
   "name": "idt",
-  "version": "0.0.0",
+  "version": "20.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --configuration production --base-href /idt/ && npx ngh --dir=dist/idt/browser"
+    "deploy": "ng build --configuration production --base-href=/idt/ && cp dist/idt/browser/index.html dist/idt/browser/404.html && npx ngh --dir=dist/idt/browser"
   },
   "prettier": {
     "printWidth": 100,
