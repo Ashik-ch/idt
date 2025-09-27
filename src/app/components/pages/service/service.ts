@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { features, Services } from '../../../data/data';
+import { features, Services, testimonialList } from '../../../data/data';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgxFadeComponent } from '@omnedia/ngx-fade'; 
+import { NgxFadeComponent } from '@omnedia/ngx-fade';
 
 @Component({
   selector: 'app-service',
   standalone: true,
   imports: [CommonModule, FormsModule,
-    NgxFadeComponent 
+    NgxFadeComponent
   ],
   templateUrl: './service.html',
   styleUrls: ['./service.css']
@@ -16,4 +16,5 @@ import { NgxFadeComponent } from '@omnedia/ngx-fade';
 export class Service {
   features = features;
   services = Services;
+  testimonials = testimonialList;
 }

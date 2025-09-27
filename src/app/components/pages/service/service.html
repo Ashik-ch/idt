@@ -9,7 +9,8 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
                     Why Choose
-                    <span class="bg-gradient-to-r from-red-500 via-red-600 to-red-400 bg-clip-text text-transparent animate-gradient-x">
+                    <span
+                        class="bg-gradient-to-r from-red-500 via-red-600 to-red-400 bg-clip-text text-transparent animate-gradient-x">
                         IDT - India Destination Tours?
                     </span>
                 </h2>
@@ -77,3 +78,27 @@
         </div>
     </div>
 </div>
+
+<!-- Testimonials -->
+<section class="bg-gradient-to-b from-white to-red-50 py-20 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-72 h-72 bg-red-100 rounded-full blur-3xl opacity-40 -z-10"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-red-200 rounded-full blur-3xl opacity-30 -z-10"></div>
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-14"> What Our Travelers Say </h2>
+        <div class="flex flex-col gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+            <div *ngFor="let t of testimonials; let i = index"
+                class="relative bg-white rounded-2xl shadow-lg p-6 text-left transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <div class="absolute -bottom-3 left-8 w-6 h-6 bg-white rotate-45 shadow-md"></div>
+                <p class="text-gray-700 leading-relaxed mb-6 text-base"> {{ t.message }} </p>
+                <div class="flex items-center gap-4">
+                    <img [src]="t.avatar" alt="{{ t.name }}"
+                        class="w-12 h-12 rounded-full object-cover border-2 border-red-500" />
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-900">{{ t.name }}</h4>
+                        <p class="text-sm text-red-600 font-medium">{{ t.location }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
