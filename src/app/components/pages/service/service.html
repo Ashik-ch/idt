@@ -49,7 +49,7 @@
     <div class="max-w-7xl mx-auto px-4">
         <!-- Section Heading -->
         <div class="mb-12 text-center max-w-2xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-red-500">Our Services</h2>
             <p class="text-gray-600">
                 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
                 there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
@@ -69,10 +69,10 @@
 
             <!-- Features -->
             <div class="order-2 md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div *ngFor="let service of services" class="flex items-start flex-col feature bg-red-50">
-                    <i class="{{ service.icon }} text-5xl text-dark-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">{{ service.title }}</h3>
-                    <p class="text-gray-600">{{ service.desc }}</p>
+                <div *ngFor="let service of services" class="flex items-start flex-col feature bg-red-500">
+                    <i class="{{ service.icon }} text-5xl  text-white  mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">{{ service.title }}</h3>
+                    <p class="text-gray-50">{{ service.desc }}</p>
                 </div>
             </div>
         </div>
@@ -80,11 +80,11 @@
 </div>
 
 <!-- Testimonials -->
-<section class="bg-gradient-to-b from-white to-red-50 py-20 relative overflow-hidden">
+<section class="bg-gradient-to-b from-gray-50 to-white py-20 relative overflow-hidden ">
     <div class="absolute top-0 left-0 w-72 h-72 bg-red-100 rounded-full blur-3xl opacity-40 -z-10"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-red-200 rounded-full blur-3xl opacity-30 -z-10"></div>
     <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-gray-900 mb-14"> What Our Travelers Say </h2>
+        <h2 class="text-3xl font-bold text-red-500 mb-14"> What Our Travelers Say </h2>
         <div class="flex flex-col gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
             <div *ngFor="let t of testimonials; let i = index"
                 class="relative bg-white rounded-2xl shadow-lg p-6 text-left transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">

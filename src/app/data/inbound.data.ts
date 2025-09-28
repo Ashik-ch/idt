@@ -131,3 +131,14 @@ export const statesData: { [key: string]: any } = {
         ]
     }
 };
+
+export const highlightedStates = [
+    { id: 'delhi', title: 'Delhi', geometry: { type: 'Point', coordinates: [77.209, 28.6139] } },
+    { id: 'mumbai', title: 'Mumbai', geometry: { type: 'Point', coordinates: [72.8777, 19.076] } },
+    { id: 'kolkata', title: 'Kolkata', geometry: { type: 'Point', coordinates: [88.3639, 22.5726] } },
+    { id: 'chennai', title: 'Chennai', geometry: { type: 'Point', coordinates: [80.2707, 13.0827] } },
+    { id: 'bengaluru', title: 'Bengaluru', geometry: { type: 'Point', coordinates: [77.5946, 12.9716] } },
+    { id: 'hyderabad', title: 'Hyderabad', geometry: { type: 'Point', coordinates: [78.4867, 17.385] } },
+    { id: 'rajasthan', title: 'Rajasthan', geometry: { type: 'Point', coordinates: [75.7873, 26.9124] } },
+    { id: 'kerala', title: 'Kerala', geometry: { type: 'Point', coordinates: [76.9366, 8.5241] } },
+];

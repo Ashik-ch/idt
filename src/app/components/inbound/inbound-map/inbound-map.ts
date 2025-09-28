@@ -3,6 +3,7 @@ import * as am5 from '@amcharts/amcharts5';
 import * as am5map from '@amcharts/amcharts5/map';
 import am5geodata_indiaLow from '@amcharts/amcharts5-geodata/indiaLow';
 import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
+import { highlightedStates, statesData } from '../../../data/inbound.data';
 
 @Component({
   selector: 'app-inbound-map',
@@ -13,6 +14,8 @@ import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
 export class InboundMap {
   @ViewChild('chartdiv', { static: true }) chartDiv!: ElementRef<HTMLDivElement>;
   private root!: am5.Root;
+  statesData = statesData;
+  highlightedStates = highlightedStates;
 
   ngAfterViewInit(): void {
     this.root = am5.Root.new(this.chartDiv.nativeElement);
@@ -64,17 +67,7 @@ export class InboundMap {
         }),
       })
     );
-
-    const cities = [
-      { id: 'delhi', title: 'Delhi', geometry: { type: 'Point', coordinates: [77.209, 28.6139] } },
-      { id: 'mumbai', title: 'Mumbai', geometry: { type: 'Point', coordinates: [72.8777, 19.076] } },
-      { id: 'kolkata', title: 'Kolkata', geometry: { type: 'Point', coordinates: [88.3639, 22.5726] } },
-      { id: 'chennai', title: 'Chennai', geometry: { type: 'Point', coordinates: [80.2707, 13.0827] } },
-      { id: 'bengaluru', title: 'Bengaluru', geometry: { type: 'Point', coordinates: [77.5946, 12.9716] } },
-      { id: 'hyderabad', title: 'Hyderabad', geometry: { type: 'Point', coordinates: [78.4867, 17.385] } },
-      { id: 'rajasthan', title: 'Rajasthan', geometry: { type: 'Point', coordinates: [75.7873, 26.9124] } },
-      { id: 'kerala', title: 'Kerala', geometry: { type: 'Point', coordinates: [76.9366, 8.5241] } },
-    ];
+    const cities=this.highlightedStates;
     citySeries.data.setAll(cities);
 
     // Invisible "path" lines (bullets move along this)

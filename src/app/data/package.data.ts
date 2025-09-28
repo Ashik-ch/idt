@@ -473,3 +473,60 @@ export const inboundPackages = [
     description: 'Palaces, Forts, Desert Safaris',
   }
 ];
+
+export const itineraryRoute = [
+  {
+    distance: 0,
+    category: 'city',
+    name: 'Coimbatore',
+    altitude: 411,
+    date: new Date('2025-05-01').getTime(),
+    population: 2,
+    geometry: { type: 'Point', coordinates: [76.956, 11.0168] }
+  },
+  {
+    distance: 85,
+    category: 'city',
+    name: 'Ooty',
+    altitude: 2240,
+    date: new Date('2025-05-02').getTime(),
+    population: 1,
+    geometry: { type: 'Point', coordinates: [76.695, 11.4064] }
+  },
+  {
+    distance: 190,
+    category: 'city',
+    name: 'Munnar',
+    altitude: 1600,
+    date: new Date('2025-05-03').getTime(),
+    population: 2,
+    geometry: { type: 'Point', coordinates: [77.059, 10.0892] }
+  },
+  {
+    distance: 270,
+    category: 'city',
+    name: 'Thekkady',
+    altitude: 915,
+    date: new Date('2025-05-04').getTime(),
+    population: 1,
+    geometry: { type: 'Point', coordinates: [77.212, 9.5980] }
+  },
+  {
+    distance: 350,
+    category: 'city',
+    name: 'Kumarakom',
+    altitude: 2,
+    date: new Date('2025-05-05').getTime(),
+    population: 1,
+    geometry: { type: 'Point', coordinates: [76.541, 9.5936] }
+  },
+  {
+    distance: 370,
+    category: 'city',
+    name: 'Kochi',
+    altitude: 3,
+    date: new Date('2025-05-06').getTime(),
+    population: 2,
+    geometry: { type: 'Point', coordinates: [76.267, 9.9312] }
+  }
+];

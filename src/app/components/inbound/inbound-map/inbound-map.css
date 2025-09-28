@@ -1,0 +1,18 @@
+@keyframes borderPulse {
+
+    0%,
+    100% {
+        border-color: rgba(239, 68, 68, 0.4);
+        /* red-500 */
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+    }
+
+    50% {
+        border-color: rgba(239, 68, 68, 0.8);
+        box-shadow: 0 0 25px rgba(239, 68, 68, 0.4);
+    }
+}
+
+.animate-pulse {
+    animation: borderPulse 3s infinite ease-in-out;
+}
