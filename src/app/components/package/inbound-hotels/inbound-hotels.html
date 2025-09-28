@@ -1,14 +1,14 @@
 <section data-animate="hotels" class="bg-white rounded-2xl shadow-xl p-8">
     <!-- Section Title -->
-    <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center" data-aos="zoom-in-right">
         <span class="bg-orange-100 p-3 rounded-full mr-4">🏨</span>
         Hotels & Resorts
     </h2>
     <div class="flex flex-wrap gap-2 justify-between">
-        <div *ngFor="let hotel of hotels" class="group flex flex-col w-full sm:w-1/2 md:w-[22%] lg:w-[24%]
+        <div *ngFor="let hotel of hotels; let i = index" class="group flex flex-col w-full sm:w-1/2 md:w-[22%] lg:w-[24%]
                         bg-white/60 backdrop-blur-lg rounded-2xl border border-gray-200
                         shadow-lg hover:shadow-2xl transition-all duration-500 p-0 overflow-hidden
-                        min-h-[520px]">
+                        min-h-[520px]" data-aos="zoom-in-right" [attr.data-aos-delay]="i * 150">
 
             <div class="relative w-full h-44 md:h-40 lg:h-48 overflow-hidden">
                 <img [src]="hotel.image || 'assets/images/a.jpg'" alt="{{ hotel.destination }}"
@@ -40,14 +40,15 @@
 
     <!-- Transport Options -->
     <div class="mt-12" data-animate="transport">
-        <h3 class="text-3xl font-extrabold text-gray-900 mb-8 flex items-center gap-3 text-center">
+        <h3 class="text-3xl font-extrabold text-gray-900 mb-8 flex items-center gap-3 text-center" data-aos="zoom-in-right">
             <span class="bg-red-100 text-red-600 p-3 rounded-full shadow-md">🚗</span>
             <span class="tracking-wide">Transport Options</span>
         </h3>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div *ngFor="let transport of transport" class="relative group bg-white/80 backdrop-blur-lg border border-red-100 rounded-2xl shadow-md p-6 
-                      hover:shadow-xl hover:scale-[1.02] transition-all duration-500 overflow-hidden">
+            <div *ngFor="let transport of transport; let i = index" class="relative group bg-white/80 backdrop-blur-lg border border-red-100 rounded-2xl shadow-md p-6 
+                      hover:shadow-xl hover:scale-[1.02] transition-all duration-500 overflow-hidden"
+                data-aos="zoom-in-right" [attr.data-aos-delay]="i * 150">
 
                 <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 via-white/40 to-pink-200/20 opacity-0 
                         group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>

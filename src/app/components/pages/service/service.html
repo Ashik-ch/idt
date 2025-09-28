@@ -49,8 +49,8 @@
     <div class="max-w-7xl mx-auto px-4">
         <!-- Section Heading -->
         <div class="mb-12 text-center max-w-2xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-red-500">Our Services</h2>
-            <p class="text-gray-600">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-red-500" data-aos="zoom-in">Our Services</h2>
+            <p class="text-gray-600" data-aos="zoom-in">
                 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
                 there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
                 the Semantics, a large language ocean.
@@ -60,16 +60,19 @@
         <!-- Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             <!-- Left Image -->
-            <div class="order-1 h-80 md:h-auto">
+            <div class="order-1 h-80 md:h-auto" data-aos="fade-in">
                 <div class="w-full h-full rounded-xl overflow-hidden shadow-xl">
-                    <div class="w-full h-full bg-cover bg-center shadow-2xl" style="background-image: url('assets/images/service3.png');">
+                    <div class="w-full h-full bg-cover bg-center shadow-2xl"
+                        style="background-image: url('assets/images/service3.png');">
                     </div>
                 </div>
             </div>
 
             <!-- Features -->
             <div class="order-2 md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div *ngFor="let service of services" class="flex items-start flex-col feature bg-red-500">
+                <div *ngFor="let service of services; let i = index"
+                    class="flex items-start flex-col feature bg-red-500" data-aos="zoom-in"
+                    [attr.data-aos-delay]="i * 150">
                     <i class="{{ service.icon }} text-5xl  text-white  mb-4"></i>
                     <h3 class="text-xl font-semibold text-white mb-2">{{ service.title }}</h3>
                     <p class="text-gray-50">{{ service.desc }}</p>
@@ -84,9 +87,9 @@
     <div class="absolute top-0 left-0 w-72 h-72 bg-red-100 rounded-full blur-3xl opacity-40 -z-10"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-red-200 rounded-full blur-3xl opacity-30 -z-10"></div>
     <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-red-500 mb-14"> What Our Travelers Say </h2>
+        <h2 class="text-3xl font-bold text-red-500 mb-14" data-aos="zoom-in-right"> What Our Travelers Say </h2>
         <div class="flex flex-col gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
-            <div *ngFor="let t of testimonials; let i = index"
+            <div *ngFor="let t of testimonials; let i = index" data-aos="zoom-in-right" [attr.data-aos-delay]="i * 150"
                 class="relative bg-white rounded-2xl shadow-lg p-6 text-left transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                 <div class="absolute -bottom-3 left-8 w-6 h-6 bg-white rotate-45 shadow-md"></div>
                 <p class="text-gray-700 leading-relaxed mb-6 text-base"> {{ t.message }} </p>
