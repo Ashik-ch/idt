@@ -8,6 +8,9 @@
   --brand: #e11d48; 
 }
 
+.bg-red-500{
+  background-color: #ff0000;
+} 
 
 html,
 body {
