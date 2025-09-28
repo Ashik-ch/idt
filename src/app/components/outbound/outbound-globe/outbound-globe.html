@@ -1,0 +1,15 @@
+<div class="flex flex-col items-center gap-4">
+    <div class="flex items-center space-x-3">
+        <span class="text-sm font-medium text-gray-700">Globe</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" class="sr-only peer" [checked]="!globeMode" (change)="toggleProjection()" />
+            <div class="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-600 transition"></div>
+            <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition peer-checked:translate-x-5">
+            </div>
+        </label>
+
+        <span class="text-sm font-medium text-gray-700">Flat Map</span>
+    </div>
+
+    <div #chartdiv class="w-full h-[70vh] rounded-lg shadow-lg overflow-hidden"></div>
+</div>

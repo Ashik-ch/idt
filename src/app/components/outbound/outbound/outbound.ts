@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { OutboundMap } from '../outbound-map/outbound-map';
 import { Router, RouterModule } from '@angular/router';
 import { outBoundPackages } from '../../../data/outbound.data';
+import { OutboundGlobe } from '../outbound-globe/outbound-globe';
 
 @Component({
   selector: 'app-outbound',
   imports: [
     CommonModule, FormsModule, RouterModule,
-    OutboundMap
+    OutboundMap, OutboundGlobe
   ],
   templateUrl: './outbound.html',
   styleUrl: './outbound.css'
