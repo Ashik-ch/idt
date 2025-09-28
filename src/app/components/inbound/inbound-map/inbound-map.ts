@@ -67,7 +67,7 @@ export class InboundMap {
         }),
       })
     );
-    const cities=this.highlightedStates;
+    const cities = this.highlightedStates;
     citySeries.data.setAll(cities);
 
     // Invisible "path" lines (bullets move along this)
@@ -150,6 +150,29 @@ export class InboundMap {
     });
 
     chart.appear(1000, 100);
+
+    // Highlighted state name
+    citySeries.bullets.push((root, series, dataItem) => {
+      const context = dataItem.dataContext as any;
+      const container = am5.Container.new(root, {});
+      container.children.push(
+        am5.Circle.new(root, {
+          radius: 5,
+          fill: am5.color(0xffba00),
+          stroke: root.interfaceColors.get("background"),
+          strokeWidth: 2,
+        })
+      );
+      container.children.push(
+        am5.Label.new(root, {
+          text: context.title,
+          dy: -15,
+          fontSize: 12,
+          fontWeight: "600",
+          fill: am5.color('#fff'),
+        }));
+      return am5.Bullet.new(root, { sprite: container });
+    });
   }
 
   private animateStart(start: any, end: any, duration: number) {

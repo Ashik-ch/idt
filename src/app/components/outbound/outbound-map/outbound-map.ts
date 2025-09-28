@@ -90,7 +90,7 @@ export class OutboundMap implements OnInit, OnDestroy {
 
     this.setupPolygonStyling();
     this.setupInteractions();
-    this.setupTooltips();
+    // this.setupTooltips();
   }
 
   private setupPolygonStyling(): void {
@@ -139,42 +139,42 @@ export class OutboundMap implements OnInit, OnDestroy {
     });
   }
 
-  private setupTooltips(): void {
-    this.polygonSeries.mapPolygons.template.adapters.add("tooltipHTML", (_html, target) => {
-      const dataContext = target.dataItem?.dataContext as MapDataContext;
-      const id = dataContext?.id;
-      const name = dataContext?.name;
+  // private setupTooltips(): void {
+  //   this.polygonSeries.mapPolygons.template.adapters.add("tooltipHTML", (_html, target) => {
+  //     const dataContext = target.dataItem?.dataContext as MapDataContext;
+  //     const id = dataContext?.id;
+  //     const name = dataContext?.name;
 
-      if (!id || !this.highlightedCountries[id]) {
-        return `<div style="text-align:center; padding:8px;"><strong>${name}</strong></div>`;
-      }
+  //     if (!id || !this.highlightedCountries[id]) {
+  //       return `<div style="text-align:center; padding:8px;"><strong>${name}</strong></div>`;
+  //     }
 
-      const country = this.highlightedCountries[id];
+  //     const country = this.highlightedCountries[id];
 
-      return `
-        <div style="text-align:center; max-width:250px; padding:12px;">
-          <h3 style="margin:0 0 8px 0; font-size:18px; color:#333;">${name}</h3>
-          <p style="margin:0 0 12px 0; font-size:14px; color:#000; line-height:1.4;">${country.details}</p>
-          <img src="${country.image}" style="width:100%; max-width:200px; border-radius:8px; margin-bottom:12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
-          <button onclick="window.navigateToCountry('${country.countryCode}')" style="
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-            transition: all 0.3s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.6)'" 
-             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)'">
-            Explore ${name}
-          </button>
-        </div>
-      `;
-    });
-  }
+  //     return `
+  //       <div style="text-align:center; max-width:250px; padding:12px;">
+  //         <h3 style="margin:0 0 8px 0; font-size:18px; color:#333;">${name}</h3>
+  //         <p style="margin:0 0 12px 0; font-size:14px; color:#000; line-height:1.4;">${country.details}</p>
+  //         <img src="${country.image}" style="width:100%; max-width:200px; border-radius:8px; margin-bottom:12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+  //         <button onclick="window.navigateToCountry('${country.countryCode}')" style="
+  //           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  //           color: white;
+  //           border: none;
+  //           padding: 10px 20px;
+  //           border-radius: 25px;
+  //           cursor: pointer;
+  //           font-size: 14px;
+  //           font-weight: 600;
+  //           box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  //           transition: all 0.3s ease;
+  //         " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.6)'" 
+  //            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.4)'">
+  //           Explore ${name}
+  //         </button>
+  //       </div>
+  //     `;
+  //   });
+  // }
 
   private drillDownToCountry(countryId: string): void {
     if (!this.countryGeoData[countryId]) return;
