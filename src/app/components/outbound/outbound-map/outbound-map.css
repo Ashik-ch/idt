@@ -1,5 +1,5 @@
 .globe-container {
-    min-height: 100vh; 
+    min-height: 100%; 
     padding: 2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   } 
