@@ -10,7 +10,7 @@
                 class="w-[200%] h-[calc(100%-10vh)] object-cover transition-all duration-500 group-hover:w-full group-hover:h-full" />
 
             <div
-                class="absolute left-2 top-1/2 -translate-y-1/2 -rotate-90  text-white text-lg font-bold z-10 pointer-events-none  group-hover:opacity-0 ">
+                class="absolute left-1 top-1/2 -translate-y-1/2 -rotate-90  text-white text-nowrap text-sm md:text-lg font-bold z-10 pointer-events-none  group-hover:opacity-0 ">
                 {{ day.title }}
             </div>
 
@@ -51,7 +51,10 @@
         </div>
     </div>
 </section>
+<section data-animate="quick-itinerary" class="bg-white rounded-2xl shadow-xl p-8 mb-8">
 
+    <app-road-map></app-road-map>
+</section>
 <section data-animate="highlights" class="bg-white rounded-3xl shadow-xl p-10">
     <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
         <span class="bg-green-100 p-3 rounded-full mr-3">⭐</span>
@@ -64,8 +67,8 @@
                     class="w-full sm:h-48 lg-h-96 md-h-96 object-cover transform group-hover:scale-105 transition duration-300">
 
                 <div
-                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4 text-white">
-                    <h3 class="text-lg font-semibold">{{ highlight.title }}</h3>
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end  text-red-500">
+                    <h3 class="text-sm lg:text-lg font-semibold">{{ highlight.title }}</h3>
                     <span class="text-sm">{{ highlight.description }}</span>
                 </div>
             </div>

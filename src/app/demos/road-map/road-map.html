@@ -1,1 +1,42 @@
-<p>road-map works!</p>
+<!-- src/app/components/inbound/inbound-map/inbound-roadtrip.component.html -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Left: Stats & controls -->
+    <div class="col-span-1 bg-white/90 rounded-2xl p-6 shadow-lg">
+      <h3 class="text-xl font-bold text-red-600 mb-3">Kerala Road Trip</h3>
+      <p class="text-sm text-gray-600 mb-4">Interactive route dashboard — click a district to open packages.</p>
+
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="text-sm text-gray-500">Stops</div>
+            <div class="text-lg font-semibold text-gray-900">{{ stops }}</div>
+          </div>
+          <div>
+            <div class="text-sm text-gray-500">Days</div>
+            <div class="text-lg font-semibold text-gray-900">{{ totalDays }}</div>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <div class="text-sm text-gray-500">Total Distance</div>
+          <div class="text-2xl font-bold text-red-600">{{ totalDistanceKm }} km</div>
+        </div>
+
+        <button
+          class="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-br from-red-600 to-red-700 text-white px-4 py-3 shadow hover:scale-105 transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2v20" stroke="white" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          Export Route
+        </button>
+      </div>
+    </div>
+
+    <!-- Center: Map -->
+    <div class="col-span-2 lg:col-span-2 bg-white rounded-2xl p-4 shadow-lg">
+      <div #mapDiv id="kerala-roadmap" class="w-full h-[66vh] rounded-lg overflow-hidden"></div>
+
+    </div>
+  </div>
+</div>

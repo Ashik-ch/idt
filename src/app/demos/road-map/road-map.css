@@ -1,0 +1,10 @@
+#kerala-roadmap {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+}
+
+/* fine-tune amCharts tooltips fonts (optional) */
+.amcharts5-tooltip {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
