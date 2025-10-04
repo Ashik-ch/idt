@@ -24,7 +24,7 @@ export interface Package {
   duration: string;
   summary: string;
   quickItinerary: string[];
-  detailedItinerary: {
+  itineraryOverview: {
     day: string;
     title: string;
     details: string[];
@@ -79,7 +79,7 @@ export const travelPackages: Package[] = [
       'Day 06 – Enjoy Kumarakom Houseboat',
       'Day 07 – Departure from Cochin',
     ],
-    detailedItinerary: [
+    itineraryOverview: [
       {
         day: '01',
         title: "Arrival at Coimbatore",

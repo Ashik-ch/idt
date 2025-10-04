@@ -4,7 +4,7 @@
     </h2>
 
     <div class="container flex w-full h-screen gap-2 box-border overflow-x-auto">
-        <div *ngFor="let day of packageData?.detailedItinerary; let i = index"
+        <div *ngFor="let day of packageData?.itineraryOverview; let i = index"
             class="box relative flex-1 overflow-hidden rounded-2xl shadow-lg transition-all duration-500 cursor-pointer group">
             <img [src]="day.image"
                 class="w-[200%] h-[calc(100%-10vh)] object-cover transition-all duration-500 group-hover:w-full group-hover:h-full" />
