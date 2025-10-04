@@ -74,10 +74,10 @@ export const statesData: { [key: string]: any } = {
             { name: 'Kovalam', description: 'Beautiful beach destination with golden sands' }
         ],
         bestTime: [
-            { name: 'Winter', months: 'Dec-Feb', description: 'Pleasant weather, perfect for sightseeing', color: 'bg-blue-500' },
-            { name: 'Monsoon', months: 'Jun-Sep', description: 'Lush greenery, backwater cruises', color: 'bg-green-500' },
-            { name: 'Spring', months: 'Mar-May', description: 'Hot but good for beach activities', color: 'bg-yellow-500' },
-            { name: 'Autumn', months: 'Oct-Nov', description: 'Mild weather, great for outdoor activities', color: 'bg-orange-500' }
+            { name: 'Winter', months: 'Dec-Feb', description: 'Pleasant weather, perfect for sightseeing', color: 'bg-white' },
+            { name: 'Monsoon', months: 'Jun-Sep', description: 'Lush greenery, backwater cruises', color: 'bg-white' },
+            { name: 'Spring', months: 'Mar-May', description: 'Hot but good for beach activities', color: 'bg-white' },
+            { name: 'Autumn', months: 'Oct-Nov', description: 'Mild weather, great for outdoor activities', color: 'bg-white' }
         ]
     },
     'rajasthan': {
@@ -124,10 +124,10 @@ export const statesData: { [key: string]: any } = {
             { name: 'Jaisalmer', description: 'Golden City in the heart of Thar Desert' }
         ],
         bestTime: [
-            { name: 'Winter', months: 'Oct-Mar', description: 'Best time to visit, pleasant weather', color: 'bg-blue-500' },
-            { name: 'Spring', months: 'Mar-May', description: 'Hot weather, good for early morning tours', color: 'bg-yellow-500' },
-            { name: 'Monsoon', months: 'Jul-Sep', description: 'Moderate rainfall, lush landscapes', color: 'bg-green-500' },
-            { name: 'Summer', months: 'May-Jun', description: 'Very hot, indoor activities recommended', color: 'bg-red-500' }
+            { name: 'Winter', months: 'Oct-Mar', description: 'Best time to visit, pleasant weather', color: 'bg-red-500' },
+            { name: 'Spring', months: 'Mar-May', description: 'Hot weather, good for early morning tours', color: 'bg-red-100' },
+            { name: 'Monsoon', months: 'Jul-Sep', description: 'Moderate rainfall, lush landscapes', color: 'bg-red-200' },
+            { name: 'Summer', months: 'May-Jun', description: 'Very hot, indoor activities recommended', color: 'bg-red-300' }
         ]
     }
 };

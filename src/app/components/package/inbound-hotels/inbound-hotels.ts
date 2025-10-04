@@ -16,7 +16,6 @@ export class InboundHotels {
     return Object.keys(obj);
   }
 
-  
   getCategoryClass(category: string): string {
     if (category.includes('3-Star')) return 'bg-green-50 border-green-200';
     if (category.includes('4-Star')) return 'bg-blue-50 border-blue-200';

@@ -1,7 +1,7 @@
 <div class="space-y-8">
     <section data-animate="attractions" class="bg-white rounded-2xl shadow-xl p-8">
         <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center" data-aos="fade-down">
-            <span class="bg-purple-100 p-3 rounded-full mr-4">🎯</span>
+            <span class="bg-red-100 text-red-600 p-3 rounded-full mr-4">🎯</span>
             Supplemental Attractions
         </h2>
 
@@ -9,8 +9,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div *ngFor="let attraction of details; let i = index"
                     class="relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition flex flex-col h-full"
-                    data-aos="fade-up"
-                    [attr.data-aos-delay]="i * 100">
+                    data-aos="fade-up" [attr.data-aos-delay]="i * 100">
                     <div class="relative h-64 w-full">
                         <img [src]="attraction.img" [alt]="attraction.name" class="w-full h-full object-cover">
                         <div class="absolute top-3 left-3 flex gap-2">
@@ -49,9 +48,8 @@
         <div class="mt-10 px-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div *ngFor="let attraction of details; let i = index" class="bg-white rounded-lg overflow-hidden flex flex-col h-full border border-gray-200 
-                  hover:shadow-lg hover:border-red-400 transition-all duration-300 ease-in-out"
-                  data-aos="zoom-in"
-                  [attr.data-aos-delay]="i * 150">
+                  hover:shadow-lg hover:border-red-400 transition-all duration-300 ease-in-out" data-aos="zoom-in"
+                    [attr.data-aos-delay]="i * 150">
                     <div class="h-48 w-full relative">
                         <img [src]="attraction.img" alt="{{ attraction.name }}" class="w-full h-full object-cover">
                         <div
@@ -86,8 +84,8 @@
             <h2 class="text-3xl font-bold text-gray-900 mb-3 border-b pb-3">Inclusions</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 <div *ngFor="let item of inclusions"
-                    class="flex items-center gap-3 bg-green-50/70 rounded-lg px-4 py-2 shadow-sm hover:shadow-md transition">
-                    <span class="text-green-600 text-xl">✔</span>
+                    class="flex items-center gap-3 bg-red-50/70 rounded-lg px-4 py-2 shadow-sm hover:shadow-md transition">
+                    <span class="text-red-600 text-xl">✔</span>
                     <span class="text-gray-800 font-medium">{{ item }}</span>
                 </div>
             </div>
@@ -110,8 +108,8 @@
             <h2 class="text-3xl font-bold text-gray-900 mb-3 border-b pb-3">Child Policy</h2>
             <div class="flex flex-wrap gap-4">
                 <div *ngFor="let policy of childPolicy"
-                    class="flex items-center gap-2 px-4 py-2 bg-yellow-50/70 rounded-xl font-medium text-gray-800 hover:bg-yellow-100 shadow-sm transition cursor-pointer">
-                    <span class="text-yellow-500 text-lg">🎯</span>
+                    class="flex items-center gap-2 px-4 py-2 bg-red-50/70 rounded-xl font-medium text-gray-800 hover:bg-red-100 shadow-sm transition cursor-pointer">
+                    <span class="text-red-500 text-lg">🎯</span>
                     <span>{{ policy }}</span>
                 </div>
             </div>
@@ -134,13 +132,13 @@
         <div class="grid md:grid-cols-2 gap-8">
             <section data-animate="inclusions" class="bg-white rounded-2xl  rounded-r-sm shadow-md p-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-                    <span class="bg-green-100 p-3 rounded-full mr-4">✅</span>
+                    <span class="bg-red-100 text-red-600 p-3 rounded-full mr-4">✅</span>
                     Services Included
                 </h2>
                 <ul class="space-y-3">
                     <li *ngFor="let inclusion of inclusions"
-                        class="flex items-start space-x-3 p-3 bg-green-50 rounded-lg">
-                        <span class="text-green-500 mt-1">✓</span>
+                        class="flex items-start space-x-3 p-3 bg-red-50 rounded-lg">
+                        <span class="text-red-500 mt-1">✓</span>
                         <span class="text-gray-800">{{ inclusion }}</span>
                     </li>
                 </ul>
@@ -165,11 +163,11 @@
     <!-- Child Policy -->
     <section data-animate="child-policy" class="bg-white rounded-2xl shadow-xl p-8">
         <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-            <span class="bg-pink-100 p-3 rounded-full mr-4">👶</span>
+            <span class="bg-red-100 text-red-600 p-3 rounded-full mr-4">👶</span>
             Child Policy
         </h2>
         <div class="space-y-3">
-            <div *ngFor="let policy of childPolicy" class="p-4 bg-pink-50 rounded-lg border border-pink-200">
+            <div *ngFor="let policy of childPolicy" class="p-4 bg-red-50 rounded-lg border border-red-200">
                 <p class="text-gray-800">{{ policy }}</p>
             </div>
         </div>
@@ -177,14 +175,13 @@
 
     <section data-animate="offers" class="bg-white rounded-2xl shadow-xl p-8 mt-8">
         <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-            <span class="bg-yellow-100 p-3 rounded-full mr-4">💝</span>
+            <span class="bg-red-100 text-red-600 p-3 rounded-full mr-4">💝</span>
             Special Offers
         </h2>
         <div class="space-y-3">
-            <div *ngFor="let offer of specialOffers"
-                class="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
+            <div *ngFor="let offer of specialOffers" class="p-4 bg-white rounded-lg border border-red-200">
                 <p class="text-gray-800 flex items-center">
-                    <span class="text-yellow-500 mr-3">🎁</span>
+                    <span class="text-red-500 mr-3">🎁</span>
                     {{ offer }}
                 </p>
             </div>
