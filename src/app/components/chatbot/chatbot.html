@@ -1,0 +1,25 @@
+<!-- Floating Chat Button -->
+<button (click)="openChat()"
+    class="fixed bottom-6 right-6 bg-red-600 text-white rounded-full p-4 shadow-xl hover:bg-red-700">
+    <i class="pi pi-comments text-2xl"></i>
+</button>
+<!-- Chat Window -->
+<div *ngIf="isOpen"
+    class="fixed bottom-20 right-6 w-80 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate__animated animate__fadeInUp">
+    <div class="bg-red-600 text-white p-4 font-semibold">IDT Virtual Assistant</div>
+
+    <div class="p-4 space-y-4 max-h-80 overflow-y-auto">
+        <p class="text-gray-800 font-medium">{{ currentStep.question }}</p>
+
+        <div *ngFor="let opt of currentStep.options">
+            <button (click)="selectOption(opt.next)"
+                class="w-full text-left px-4 py-2 my-1 bg-gray-100 rounded-lg hover:bg-red-50 hover:text-red-600 transition">
+                {{ opt.text }}
+            </button>
+        </div>
+
+        <div *ngIf="currentStep.options.length === 0" class="text-sm text-gray-500">
+            Thank you for chatting with us! 👋
+        </div>
+    </div>
+</div>

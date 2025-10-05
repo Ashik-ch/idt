@@ -53,7 +53,8 @@
             <h2 class="text-xl md:text-2xl font-bold text-red-500 border-b pb-3 mb-2">Special Offers</h2>
             <div class="flex flex-wrap gap-4">
                 <div *ngFor="let offer of specialOffers"
-                    class="px-4 py-2 rounded-2xl border-red-200 outline-4 font-medium text-gray-800 hover:bg-red-100 shadow-sm transition cursor-pointer">
+                    class="px-4 py-2 rounded-xl border-2 border-red-500 text-red-600 font-semibold 
+                       bg-white hover:bg-red-50 shadow-sm transition-all duration-300 outline outline-2 outline-offset-2 outline-transparent ">
                     {{ offer }}
                 </div>
             </div>
@@ -105,33 +106,43 @@
                 </div>
             </div>
         </div> -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            <div *ngFor="let attraction of details; let i = index" class="bg-white rounded-lg overflow-hidden flex flex-col h-full border border-gray-200 
-                  hover:shadow-lg hover:border-red-400 transition-all duration-300 ease-in-out">
-                <div class="h-48 w-full relative">
-                    <img [src]="attraction.img" alt="{{ attraction.name }}" class="w-full h-full object-cover">
+        <!-- Selectable Compact Horizontal Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+            <div *ngFor="let attraction of details; let i = index" class="relative flex bg-white border border-gray-200 rounded-lg overflow-hidden 
+             hover:shadow-md hover:border-red-400 transition-all duration-300 ease-in-out mb-4">
+                <!-- Checkbox (top-left corner) -->
+                <div class="absolute top-2 left-2 z-10">
+                    <input type="checkbox" [(ngModel)]="attraction.selected"
+                        class="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-400" />
+                </div>
+
+                <!-- Image (left side) -->
+                <div class="w-1/3 relative">
+                    <img [src]="attraction.img" [alt]="attraction.name" class="w-full h-full object-cover" />
                     <div class="absolute inset-0 bg-black opacity-0 hover:opacity-10 transition-opacity duration-300">
                     </div>
                 </div>
-                <div class="flex flex-col flex-grow p-5">
-                    <h4 class="text-xl font-semibold mb-2 text-gray-800 mt-0">
-                        {{ attraction.name }}
-                    </h4>
-                    <div
-                        class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-500 pt-2 border-t border-gray-100 mt-auto">
-                        <div class="flex items-center">
-                            <span>💲{{ attraction.cost }}</span>
-                        </div>
-                        <div class="flex">
-                            <span>📍 {{ attraction.location }}</span>
-                        </div>
+
+                <!-- Text (right side) -->
+                <div class="w-2/3 flex flex-col justify-between p-3">
+                    <div>
+                        <h4 class="text-sm sm:text-base font-semibold text-gray-800 truncate">
+                            {{ attraction.name }}
+                        </h4>
+                        <p class="text-gray-600 text-xs sm:text-sm line-clamp-2 mt-1">
+                            {{ attraction.subtitle }}
+                        </p>
                     </div>
-                    <p class="text-gray-600 text-sm mb-4 flex-grow">
-                        {{ attraction.subtitle }}
-                    </p>
+                    <div
+                        class="flex justify-between items-center text-xs sm:text-sm text-gray-500 mt-2 border-t border-gray-100 pt-2">
+                        <span>💲{{ attraction.cost }}</span>
+                        <span>📍{{ attraction.location }}</span>
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </section>
 
     <!-- <section data-animate="condition" class="bg-white rounded-2xl shadow-xl space-y-8">

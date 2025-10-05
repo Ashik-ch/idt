@@ -1,0 +1,7 @@
+.fixed {
+    z-index: 1000;
+}
+
+button {
+    outline: none;
+}
