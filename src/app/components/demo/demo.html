@@ -1,16 +1,14 @@
 <div class="bg-white flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 w-full h-full bg-cover bg-center opacity-20"
         style="background-image: url('assets/images/bg2.jpg'); "> </div>
-    <div
-        class="container mx-auto flex flex-col lg:flex-row items-center  transition-all duration-700 ease-in-out">
+    <div class="container mx-auto flex flex-col lg:flex-row items-center  transition-all duration-700 ease-in-out">
         <div
             class="flex-1 text-center lg:text-left transform transition-all duration-700 ease-in-out px-4 ms-2 md:ms-12 md:px-12 space-y-8">
-            <p class="font-bold text-xs lg:text-xl md:text-base text-red-700 uppercase tracking-wide mt-4">
-                Discover Your Journey
-            </p>
-            <h1 class="font-serif text-3xl sm:text-xl md:text-5xl lg:text-6xl px-4 py-2 h1-border
-                   font-extrabold text-white bg-red-500 leading-tight">
-                Explore the World with Us
+            <p class="font-semibold text-lg lg:text-xl md:text-base text-red-500 tracking-wide">
+                <om-typewriter [words]="[' Simply no better!']"></om-typewriter>
+            <h1 class="font-serif text-2xl sm:text-xl md:text-3xl lg:text-4xl px-6 py-3 w-fit md:w-3/4
+                       font-extrabold text-white bg-red-500 leading-tight rounded-lg shadow-lg">
+                <span class="inline-block animate-float">End of your Tour Search starts from here...</span>
             </h1>
 
             <p
@@ -22,11 +20,11 @@
             <div class="flex flex-row  gap-3 sm:gap-4 pt-4 w-full sm:w-auto justify-center md:justify-start">
                 <a routerLink="/inbound" class="px-3 py-3 rounded-full bg-red-500 text-white font-semibold shadow-lg hover:shadow-xl 
                      transition-transform transform hover:scale-105 text-center">
-                    Inbound Packages
+                    Inbound Packages to India
                 </a>
                 <a routerLink="/outbound" class="px-3 py-3 rounded-full border-2 border-red-500 text-red-500 font-semibold 
                      hover:bg-white hover:text-red-500 transition-transform transform hover:scale-105 text-center">
-                    Outbound Tour
+                    Outbound Tours to International
                 </a>
             </div>
         </div>

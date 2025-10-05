@@ -1,19 +1,33 @@
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a class="flex items-center gap-2" routerLink="/">
-      <span
-        class="inline-block w-8 h-8 rounded-full bg-[color:var(--brand)] text-white grid place-items-center font-bold">IDT</span>
-      <span class="font-semibold text-gray-900">India Destination Tourism</span>
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-5 py-3 flex items-center justify-between">
+
+    <!-- Logo + Brand -->
+    <a routerLink="/" class="flex items-center gap-3 group">
+      <div class="relative">
+        <img src="assets/images/logo.png" alt="IDT Logo"
+          class="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110">
+      </div>
+      <div class="flex flex-col leading-tight">
+        <span
+          class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent tracking-wide">
+          IDT WORLD
+        </span>
+        <span class="text-xs md:text-sm text-gray-700 italic">
+          From the House of India Destination Tours
+        </span>
+      </div>
     </a>
-    <nav class="hidden md:flex items-center gap-6 text-sm">
-      <a routerLink="/" class="hover:text-[color:var(--brand)]">Home</a>
-      <a routerLink="/inbound" class="hover:text-[color:var(--brand)]">Inbound</a>
-      <a routerLink="/outbound" class="hover:text-[color:var(--brand)]">Outbound</a>
-      <a routerLink="/contact" class="hover:text-[color:var(--brand)]">Contact</a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+      <a routerLink="/" class="hover:text-red-600 transition-colors">Home</a>
+      <a routerLink="/inbound" class="hover:text-red-600 transition-colors">Inbound</a>
+      <a routerLink="/outbound" class="hover:text-red-600 transition-colors">Outbound</a>
+      <a routerLink="/contact" class="hover:text-red-600 transition-colors">Contact</a>
     </nav>
 
     <!-- Mobile Menu Button -->
-    <button class="md:hidden p-2 rounded-lg border border-gray-300 hover:bg-gray-100"
+    <button class="md:hidden p-2 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
       (click)="isMenuOpen = !isMenuOpen">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -21,12 +35,11 @@
     </button>
   </div>
 
-  <!-- Mobile Nav -->
-  <nav *ngIf="isMenuOpen" class="md:hidden px-4 pb-3 space-y-2 text-sm bg-white border-t">
-    <a routerLink="/" (click)="isMenuOpen=false" class="block py-2 hover:text-[color:var(--brand)]">Home</a>
-    <a routerLink="/inbound" (click)="isMenuOpen=false" class="block py-2 hover:text-[color:var(--brand)]">Inbound</a>
-    <a routerLink="/outbound" (click)="isMenuOpen=false" class="block py-2 hover:text-[color:var(--brand)]">Outbound</a>
-    <a routerLink="/contact" (click)="isMenuOpen=false" class="block py-2 hover:text-[color:var(--brand)]">Contact</a>
+  <!-- Mobile Navigation -->
+  <nav *ngIf="isMenuOpen" class="md:hidden bg-white border-t border-gray-200 px-5 py-3 space-y-2 text-sm shadow-inner">
+    <a routerLink="/" (click)="isMenuOpen=false" class="block py-2 hover:text-red-600 transition">Home</a>
+    <a routerLink="/inbound" (click)="isMenuOpen=false" class="block py-2 hover:text-red-600 transition">Inbound</a>
+    <a routerLink="/outbound" (click)="isMenuOpen=false" class="block py-2 hover:text-red-600 transition">Outbound</a>
+    <a routerLink="/contact" (click)="isMenuOpen=false" class="block py-2 hover:text-red-600 transition">Contact</a>
   </nav>
-
 </header>

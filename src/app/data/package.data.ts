@@ -37,21 +37,20 @@ export interface Package {
   }[];
   inclusions: string[];
   exclusions: string[];
-  highlights: string[];
+  sightseeing: string[];
   hotels: {
     destination: string;
     image: string;
     categories: { [key: string]: string[] };
   }[];
   childPolicy: string[];
-  transport: { pax: string; description: string }[];
+  meals: string;
+  transport: { pax: string; description: string, icon: string }[];
   pricing: {
     season: string;
     categories: {
       category: string;
       twoPax: string;
-      fourToSixPax: string;
-      eightToTenPax: string;
       extraPerson: string;
     }[];
   }[];
@@ -255,18 +254,22 @@ export const travelPackages: Package[] = [
     ],
     exclusions: [
       'International/domestic flights & airport taxes',
-      'Passport & visa fees',
-      'Personal expenses (laundry, calls, beverages, etc.)',
-      'Single room supplement',
-      'Bottled/mineral water during meals',
-      'Peak season or special event surcharges',
+      'Passport, visa stamping & visa fees',
+      'Personal expenses (laundry, calls, beverages, room service, etc.)',
+      'Single room(quoted separately), Child or adult in a triple sharing room',
+      'Another language may be available on request',
+      'Vegetable meals may be on request',
+      'Bottled/mineral water during any meal.',
+      'Peak tourist season or special event rates.'
     ],
-    highlights: [
-      'Botanical Garden, Rose Garden, Avvamore Palace, Govt. Museum, Toy Train',
-      'Munnar Hill Station, Tea Gardens, Tea Museum, Spice Shopping',
-      'Eravikulam National Park, Mattupetty Dam, Echo Point, Kundala Lake, Top Station',
-      'Elephant Ride, Jungle Safari, Kalaripayattu',
-      'Full-day cruise & overnight in houseboat',
+
+    sightseeing: [
+      'Visit the botanical garden, Rose garden, Avmamore palace, Govt museum and enjoy the toy train',
+      'Munnar Hill Station, Tea Gardens, Tea Museum. Spice Shopping',
+      'Eravikulam National Park, Mattupetty Dam, Echo Point, Kundala Lake and Top Station',
+      'Elephant Ride, Jungle Safari, and enjoy Kalaripayattu',
+      'Full day cruise & Night stay in A/C houseboat',
+      'Entry Fees, Service & other Taxes, Toll Charges, Bata & Night halting Charges, Local Guides at Selected locations',
     ],
 
     hotels: [
@@ -274,40 +277,40 @@ export const travelPackages: Package[] = [
         destination: 'Ooty (2N)',
         image: 'assets/images/a.jpg',
         categories: {
-          '3-Star': ['Nahar Nilgiris Resort', 'Treebo Windsor Heights Resort'],
-          '4-Star': ['Garden Manor Resort', 'Fortune Retreats', 'The Monarch'],
-          '5-Star Deluxe': ['Gem Park Ooty', 'Sterling Fernhill Ooty'],
-          '5-Star Luxury': ['Taj Savoy Hotel', 'Taj Gateway Coonoor'],
+          '3-Star Deluxe': ['Nahar Nilgiris Resort', 'Treebo Windsor Heights Resort', 'Garden Manor Resort',],
+          '4-Star Deluxe': ['Garden Manor Resort', 'Fortune Retreats', 'The Monarch'],
+          '5-Star Deluxe': ['Sterling Fern Hill, Ooty', 'Accord Highland', 'Mango Hill Shola Resort', 'Fortune Sullivan Court', 'Gem Park Ooty'],
+          '5-Star Luxury': ['Ayatana Ooty', 'Taj Savoy Hotel', 'Taj Gateway Coonoor'],
         },
       },
       {
         destination: 'Munnar (2N)',
         image: 'assets/images/b.jpg',
         categories: {
-          '3-Star': ['West Wood Resort', 'Eastend Hotel'],
-          '4-Star': ['Rivulet Resort', 'Elephant Passage Resort'],
-          '5-Star Deluxe': ['Blanket Hotel', 'Spice Tree Resort'],
-          '5-Star Luxury': ['Chandys Windy Woods', 'Grand Cliff Resort'],
+          '3-Star Deluxe': ['West Wood Resort', 'Eastend Hotel', 'Trivers Resort', 'Tea Castle'],
+          '4-Star Deluxe': ['Rivulet Resort', 'Elephant Passage Resort', 'Fog Resort', 'Tall Trees Resort'],
+          '5-Star Deluxe': ['Blanket Hotel', 'The Valle Resort', 'Fragrant Nature Resort'],
+          '5-Star Luxury': ['Chandys Windy Woods', 'Chandys Drizzle Drops', 'Spice Tree Resort', 'Grand Cliff Resort'],
         },
       },
       {
         destination: 'Thekkady (1N)',
         image: 'assets/images/c.jpg',
         categories: {
-          '3-Star': ['Abad Green Forest', 'Pepper Vine Resort'],
-          '4-Star': ['Mountain Courtyard Resort', 'Forest Canopy Resort'],
-          '5-Star Deluxe': ['Poetree Resort', 'Elephant Court'],
-          '5-Star Luxury': ['Spice Village Resort', 'Lake Palace Resort'],
+          '3-Star Deluxe': ['Abad Green Forest', 'Pepper Vine Resort', 'Spice Tree Resort'],
+          '4-Star Deluxe': ['Mountain Courtyard Resort', 'Forest Canopy Resort', 'Reen Resorts'],
+          '5-Star Deluxe': ['Poetree Resort', 'Elephant Court', 'Green Woods Resort'],
+          '5-Star Luxury': ['Spice Village Resort', 'Lake Palace Resort', 'Hills & Hues Resort', 'Lake Palace Resort KTDC', 'Blanket Resort'],
         },
       },
       {
         destination: 'Kumarakom Houseboat (1N)',
         image: 'assets/images/d.jpg',
         categories: {
-          'Standard': ['A/C', 'Standard Houseboat'],
-          'Deluxe': ['A/C Deluxe Houseboat', ' (Silver Flag)'],
-          'Premium': ['A/C Premium Houseboat', ' (Golden Flag)'],
-          'Luxury': ['Full-time A/C', 'Luxury Houseboat (Platinum)'],
+          'Standard': ['A/C Standard Houseboat'],
+          'Deluxe': ['A/C Deluxe Houseboat with Silver Flag Category'],
+          'Premium': ['AC Premium Houseboat with Golden flag category'],
+          'Luxury': ['Full-time AC Luxury boat with Platinum category'],
         },
       },
     ],
@@ -315,31 +318,33 @@ export const travelPackages: Package[] = [
       'Below 5 years : Free of cost',
       'Above 5 years : Extra person charge with extra bed',
     ],
+    meals: '**will be Breakfast + Dinner Basis in all the destinations and three meals (Breakfast +Lunch+ Dinner) in the houseboat.',
+
     transport: [
-      { pax: '2 Pax', description: 'A/C Sedan car (Toyota Etios/Swift Dzire)' },
-      { pax: '4–6 Pax', description: 'A/C Toyota Innova Crysta' },
-      { pax: '6–10 Pax', description: 'A/C 12-Seater Force Traveller' },
-      { pax: '10–14 Pax', description: 'A/C 17-Seater Force Traveller' },
-      { pax: '15–25 Pax', description: 'A/C Mini Luxury Bus' },
-      { pax: '25+ Pax', description: 'A/C Luxury Bus' },
+      { pax: '2 Pax', description: 'A/C Sedan car (Toyota Etios/Swift Dzire)', icon: "🚗" },
+      { pax: '4–6 Pax', description: 'A/C Toyota Innova Crysta', icon: "🚙" },
+      { pax: '6–10 Pax', description: 'A/C 12-Seater Force Traveller', icon: "🚎" },
+      { pax: '10–14 Pax', description: 'A/C 17-Seater Force Traveller', icon: "🚌" },
+      { pax: '15–25 Pax', description: 'A/C Mini Luxury Bus', icon: "🚇" },
+      { pax: '25+ Pax', description: 'A/C Luxury Bus', icon: "🚍" },
     ],
     pricing: [
       {
         season: 'High Season (Oct 1 – Dec 19 & Jan 10 – May 31)',
         categories: [
-          { category: '3-Star Deluxe Resort', twoPax: '₹37,510', fourToSixPax: '₹35,630', eightToTenPax: '₹33,840', extraPerson: '₹9,370', },
-          { category: '4-Star Deluxe Resort', twoPax: '₹43,840', fourToSixPax: '₹41,640', eightToTenPax: '₹39,550', extraPerson: '₹10,960', },
-          { category: '5-Star Deluxe Resort', twoPax: '₹56,780', fourToSixPax: '₹53,940', eightToTenPax: '₹51,240', extraPerson: '₹14,190', },
-          { category: '5-Star Luxury Resort', twoPax: '₹1,09,390', fourToSixPax: '₹1,03,920', eightToTenPax: '₹98,720', extraPerson: '₹27,340', },
+          { category: '3-Star Deluxe Resort', twoPax: '₹37,510', extraPerson: '₹9,370', },
+          { category: '4-Star Deluxe Resort', twoPax: '₹43,840', extraPerson: '₹10,960', },
+          { category: '5-Star Deluxe Resort', twoPax: '₹56,780', extraPerson: '₹14,190', },
+          { category: '5-Star Luxury Resort', twoPax: '₹1,09,390', extraPerson: '₹27,340', },
         ],
       },
       {
         season: 'Off Season (Jun 1 – Sep 30)',
         categories: [
-          { category: '3-Star Deluxe Resort', twoPax: '₹30,000', fourToSixPax: '₹28,500', eightToTenPax: '₹27,070', extraPerson: '₹7,490', },
-          { category: '4-Star Deluxe Resort', twoPax: '₹35,070', fourToSixPax: '₹33,310', eightToTenPax: '₹31,640', extraPerson: '₹8,760', },
-          { category: '5-Star Deluxe Resort', twoPax: '₹45,420', fourToSixPax: '₹43,150', eightToTenPax: '₹40,990', extraPerson: '₹11,350', },
-          { category: '5-Star Luxury Resort', twoPax: '₹87,510', fourToSixPax: '₹83,130', eightToTenPax: '₹78,970', extraPerson: '₹21,870', },
+          { category: '3-Star Deluxe Resort', twoPax: '₹30,000', extraPerson: '₹7,490', },
+          { category: '4-Star Deluxe Resort', twoPax: '₹35,070', extraPerson: '₹8,760', },
+          { category: '5-Star Deluxe Resort', twoPax: '₹45,420', extraPerson: '₹11,350', },
+          { category: '5-Star Luxury Resort', twoPax: '₹87,510', extraPerson: '₹21,870', },
         ],
       },
     ],

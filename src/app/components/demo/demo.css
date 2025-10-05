@@ -1,3 +1,19 @@
 .h1-border {
     border-radius: 0 0 4rem 0;
 }
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-float:hover {
+    animation: float 3s ease-in-out infinite;
+}

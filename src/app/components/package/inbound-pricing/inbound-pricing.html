@@ -1,12 +1,11 @@
-<section data-animate="pricing" class="bg-white rounded-2xl shadow-xl p-8">
-    <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-        <span class="bg-red-100 text-red-600 p-3 rounded-full mr-4">💰</span>
-        Package Pricing
+<section data-animate="pricing" class="bg-white rounded-2xl shadow-xl p-6">
+    <h2 class="text-xl md:text-2xl font-bold mb-2 text-red-500 pb-4">
+        <span class="bg-red-100 text-red-600 p-2 rounded-full mr-4">💰</span> Package Pricing
     </h2>
 
-    <div class="space-y-8">
+    <section class="space-x-8 flex justify-between">
         <div *ngFor="let season of pricing" class="rounded-xl shadow-lg p-6 border-2"
-            [ngClass]="getSeasonClass(season.season) ? 'bg-red-100 border-red-300' : 'bg-white border-red-200'">
+            [ngClass]="getSeasonClass(season.season) ? 'bg-white border-red-300' : 'bg-white border-red-300'">
             <h3 class="text-xl font-bold mb-6 text-center text-gray-900">{{ season.season }}</h3>
             <div class="overflow-x-auto">
                 <table class="min-w-full border-collapse text-gray-800">
@@ -16,8 +15,6 @@
                         'bg-red-500 text-white'">
                             <th class="text-left py-3 px-5 font-semibold rounded-tl-xl">Category</th>
                             <th class="text-center py-3 px-5 font-semibold">2 Pax</th>
-                            <th class="text-center py-3 px-5 font-semibold">4-6 Pax</th>
-                            <th class="text-center py-3 px-5 font-semibold">8-10 Pax</th>
                             <th class="text-center py-3 px-5 font-semibold rounded-tr-xl">Extra Person</th>
                         </tr>
                     </thead>
@@ -25,12 +22,8 @@
                         <tr *ngFor="let category of season.categories"
                             class="border-b hover:bg-gray-100 transition-colors">
                             <td class="py-3 px-5 font-medium">{{ category.category }}</td>
-                            <td class="py-3 px-5 text-center font-bold text-green-600">{{ formatPrice(category.twoPax)
+                            <td class="py-3 px-5 text-center font-bold text-red-600">{{ formatPrice(category.twoPax)
                                 }}</td>
-                            <td class="py-3 px-5 text-center font-bold text-red-600">{{
-                                formatPrice(category.fourToSixPax) }}</td>
-                            <td class="py-3 px-5 text-center font-bold text-red-600">{{
-                                formatPrice(category.eightToTenPax) }}</td>
                             <td class="py-3 px-5 text-center font-bold text-red-600">{{
                                 formatPrice(category.extraPerson) }}</td>
                         </tr>
@@ -38,9 +31,9 @@
                 </table>
             </div>
         </div>
-    </div>
+    </section>
 
-
+    <!--   PRICING IN CARDS    
     <div class="min-h-screen bg-red-500 rounded-3xl mt-5">
         <div *ngFor="let season of pricing"
             class="relative rounded-3xl p-8 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg overflow-hidden group">
@@ -61,14 +54,14 @@
                             <p>👥 2 Pax</p>
                             <p class="font-bold text-white">{{ formatPrice(category.twoPax) }}</p>
                         </span>
-                        <span class="flex justify-between">
+                        <!-- <span class="flex justify-between">
                             <p>👨‍👩‍👦 4-6 Pax</p>
                             <p class="font-bold text-white">{{ formatPrice(category.fourToSixPax) }}</p>
                         </span>
                         <span class="flex justify-between">
                             <p>🚌 8-10 Pax</p>
                             <p class="font-bold text-white">{{ formatPrice(category.eightToTenPax) }}</p>
-                        </span>
+                        </span> 
                         <span class="flex justify-between">
                             <p>➕ Extra Person</p>
                             <p class="font-bold text-white">{{ formatPrice(category.extraPerson) }}</p>
@@ -77,52 +70,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-
-    <div class="space-y-12 mt-3">
-        <div *ngFor="let season of pricing" class="relative rounded-2xl p-8  shadow-xl overflow-hidden group"
-            [ngClass]="getSeasonClass(season.season) ? 'bg-red-100 border-red-500' : 'bg-white border-red-200'">
-            <h3
-                class="text-xl font-bold text-center text-red-600 mb-10 tracking-wide group-hover:scale-105 transition-transform">
-                {{ season.season }}
-            </h3>
-            <!-- Category Cards -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div *ngFor="let category of season.categories" class="relative bg-white border border-red-100 rounded-2xl shadow-md p-6 flex flex-col items-center
-                        hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-red-100/30 to-pink-100/30 opacity-0 
-                          group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-
-                    <h4 class="relative z-10 text-xl font-bold text-gray-800 mb-4">
-                        {{ category.category }}
-                    </h4>
-
-                    <!-- Prices Grid -->
-                    <div class="relative z-10 space-y-3 text-center w-full">
-                        <span class="flex justify-between">
-                            <p class="text-gray-600 text-sm">👥 2 Pax</p>
-                            <p class="text-lg font-bold text-red-600">{{ formatPrice(category.twoPax) }}</p>
-                        </span>
-                        <span class="flex justify-between">
-                            <p class="text-gray-600 text-sm">👨‍👩‍👦 4-6 Pax</p>
-                            <p class="text-lg font-bold text-red-600">{{ formatPrice(category.fourToSixPax) }}</p>
-                        </span>
-                        <span class="flex justify-between">
-
-                            <p class="text-gray-600 text-sm">🚌 8-10 Pax</p>
-                            <p class="text-lg font-bold text-red-600">{{ formatPrice(category.eightToTenPax) }}</p>
-                        </span>
-                        <span class="flex justify-between">
-
-                            <p class="text-gray-600 text-sm">➕ Extra Person</p>
-                            <p class="text-lg font-bold text-red-600">{{ formatPrice(category.extraPerson) }}</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div> -->
 
 </section>

@@ -9,10 +9,10 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './inbound-summary.css'
 })
 export class InboundSummary {
-  @Input() details :any
-  @Input() specialOffers :any
-  @Input() exclusions :any
-  @Input() inclusions :any
-  @Input() childPolicy :any
+  @Input() details: any
+  @Input() specialOffers: any
+  @Input() exclusions: any
+  @Input() inclusions: any
+  @Input() sightseeing: any
 
 }

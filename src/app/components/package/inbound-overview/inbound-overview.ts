@@ -2,13 +2,12 @@ import { Component, Input } from '@angular/core';
 import { Package, travelPackages } from '../../../data/package.data';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';  
-import { RoadMap } from '../../../demos/road-map/road-map';
+import { FormsModule } from '@angular/forms';   
 
 @Component({
   selector: 'app-inbound-overview',
   imports: [CommonModule, FormsModule,
-    RoadMap
+    
   ],
   templateUrl: './inbound-overview.html',
   styleUrl: './inbound-overview.css'

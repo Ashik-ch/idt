@@ -1,4 +1,4 @@
-<section data-animate="quick-itinerary" class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+<section data-animate="quick-itinerary" class="bg-white rounded-2xl p-8 mb-8">
     <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
         <span class="bg-red-100 text-red-600 p-3 rounded-full mr-4">💎</span> Quick Reference Itinerary
     </h2>
@@ -29,7 +29,7 @@
                             d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
                     </svg>
                     <h3 class="text-xl font-bold text-white transition-all duration-500">
-                        {{ day.day }} - {{ day.title }}
+                        Day {{ day.day }} - {{ day.title }}
                     </h3>
                 </div>
 
@@ -51,27 +51,7 @@
         </div>
     </div>
 </section>
-<section data-animate="quick-itinerary" class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+<!-- <section data-animate="quick-itinerary" class="bg-white rounded-2xl shadow-xl p-8 mb-8">
 
     <app-road-map></app-road-map>
-</section>
-<section data-animate="highlights" class="bg-white rounded-3xl shadow-xl p-10">
-    <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-        <span class="bg-red-100 text-red-600 p-3 rounded-full mr-3">⭐</span>
-        Package Highlights
-    </h2>
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3">
-        <div class="relative group" *ngFor="let highlight of stateHighlights">
-            <div class="block overflow-hidden shadow-md">
-                <img [src]="highlight.img" [alt]="highlight.title"
-                    class="w-full sm:h-48 lg-h-96 md-h-96 object-cover transform group-hover:scale-105 transition duration-300">
-
-                <div
-                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end  text-red-500">
-                    <h3 class="text-sm lg:text-lg font-semibold">{{ highlight.title }}</h3>
-                    <span class="text-sm">{{ highlight.description }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+</section> -->

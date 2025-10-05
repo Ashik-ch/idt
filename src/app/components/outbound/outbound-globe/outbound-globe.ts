@@ -13,7 +13,7 @@ import am5geodata_worldLow from '@amcharts/amcharts5-geodata/worldLow';
 export class OutboundGlobe implements AfterViewInit, OnDestroy {
   @ViewChild('chartdiv', { static: true }) chartDiv!: ElementRef<HTMLDivElement>;
   private root?: am5.Root;
-  globeMode = false 
+  globeMode = false
 
   constructor(private zone: NgZone) { }
 
@@ -30,15 +30,26 @@ export class OutboundGlobe implements AfterViewInit, OnDestroy {
     root.setThemes([am5themes_Animated.new(root)]);
 
     // 🌍 MapChart
+    // const chart = root.container.children.push(
+    //   am5map.MapChart.new(root, {
+    //     panX: 'rotateX',
+    //     panY: 'rotateY',
+    //     projection: this.globeMode ? am5map.geoOrthographic() : am5map.geoMercator(),
+    //     rotationY: this.globeMode ? 20 : 0,
+    //   })
+    // );
+
     const chart = root.container.children.push(
       am5map.MapChart.new(root, {
         panX: 'rotateX',
         panY: 'rotateY',
         projection: this.globeMode ? am5map.geoOrthographic() : am5map.geoMercator(),
-        rotationY: this.globeMode ? 20 : 0,
+        rotationX: -80, // 👈 shift horizontally (Asia center)
+        rotationY: 0,  // tilt vertically
+        rotationZ: 0,
+        homeGeoPoint: { longitude: 80, latitude: 20 } 
       })
     );
-
     const polygonSeries = chart.series.push(
       am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_worldLow,

@@ -35,6 +35,7 @@
     "@omnedia/ngx-fade": "^3.0.0",
     "@omnedia/ngx-shine-border": "^3.0.0",
     "@omnedia/ngx-shiny-text": "^3.0.0",
+    "@omnedia/ngx-typewriter": "^3.1.1",
     "@omnedia/ngx-vortex": "^3.0.1",
     "aos": "^2.3.4",
     "primeicons": "^7.0.0",

@@ -12,6 +12,10 @@
   background-color: #ff0000;
 } 
 
+.text-red-500{
+  color: #ff0000;
+} 
+
 html,
 body {
   height: 100%;

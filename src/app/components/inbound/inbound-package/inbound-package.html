@@ -46,45 +46,51 @@
                 </button>
             </div>
         </om-shine-border>
+        <section class="bg-white mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="max-w-7xl space-y-6 mt-8">
+                <!-- Reusable collapsible section -->
+                <div *ngFor="let section of collapsibleSections"
+                    class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <!-- Header -->
+                    <button
+                        class="w-full flex justify-between items-center px-6 py-4 bg-gradient-to-r from-red-600 via-red-500 to-red-700 text-white font-semibold text-lg md:text-xl transition-all hover:opacity-95"
+                        (click)="toggleSection(section.id)">
+                        <span>{{ section.title }}</span>
+                        <i class="pi" [ngClass]="{
+                      'pi-chevron-down': openSection !== section.id,
+                      'pi-chevron-up': openSection === section.id
+                    }"></i>
+                    </button>
 
-        <section class="min-h-screen">
-            <!-- Navigation Tabs -->
-            <div class="sticky top-0 z-40 shadow-lg mb-4">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <nav class="flex space-x-8 overflow-x-auto justify-center">
-                        <button *ngFor="let tab of ['overview', 'itinerary', 'pricing', 'hotels', 'details']"
-                            (click)="setActiveTab(tab)"
-                            [class]="' m-3 py-2 px-4 bg-white rounded-xl font-medium text-sm whitespace-nowrap transition-colors duration-200' + 
-                           (activeTab === tab ? 'border-blue-500 text-red-600' : 'border-transparent text-gray-800 hover:text-gray-800 hover:border-gray-300')">
-                            {{ tab | titlecase }}
-                        </button>
-                    </nav>
+                    <!-- Content -->
+                    <div class="transition-all duration-500 ease-in-out overflow-hidden bg-white"
+                        [style.maxHeight]="openSection === section.id ? '3000px' : '0px'">
+                        <div>
+                            <ng-container [ngSwitch]="section.id">
+                                <!-- <app-inbound-overview *ngSwitchCase="'overview'"
+                                    [stateHighlights]="stateHighlights"></app-inbound-overview> -->
+
+                                <app-inbound-itinerary *ngSwitchCase="'overview'"
+                                    [detailedItinerary]="packageData?.detailedItinerary"></app-inbound-itinerary>
+
+                                <app-inbound-hotels *ngSwitchCase="'hotels'" [hotels]="packageData?.hotels"
+                                    [transport]="packageData?.transport" [childPolicy]="packageData?.childPolicy"
+                                    [meals]="packageData?.meals">
+                                </app-inbound-hotels>
+
+                                <app-inbound-summary *ngSwitchCase="'details'"
+                                    [details]="packageData?.supplementalAttractions"
+                                    [specialOffers]="packageData?.specialOffers" [inclusions]="packageData?.inclusions"
+                                    [exclusions]="packageData?.exclusions" [sightseeing]="packageData?.sightseeing">
+                                </app-inbound-summary>
+
+                                <app-inbound-pricing *ngSwitchCase="'pricing'" [pricing]="packageData?.pricing">
+                                </app-inbound-pricing>
+
+                            </ng-container>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div *ngIf="activeTab === 'overview'" class="mb-2">
-                <app-inbound-overview [stateHighlights]="stateHighlights"></app-inbound-overview>
-            </div>
-
-            <div *ngIf="activeTab === 'itinerary'" class="mb-2">
-                <app-inbound-itinerary [detailedItinerary]="packageData?.detailedItinerary"></app-inbound-itinerary>
-            </div>
-
-            <div *ngIf="activeTab === 'pricing'" class="mb-2">
-                <app-inbound-pricing [pricing]="packageData?.pricing"
-                    [transport]='packageData?.transport'></app-inbound-pricing>
-            </div>
-
-            <div *ngIf="activeTab === 'hotels'" class="mb-2">
-                <app-inbound-hotels [hotels]="packageData?.hotels"
-                    [transport]='packageData?.transport'></app-inbound-hotels>
-            </div>
-
-            <div *ngIf="activeTab === 'details'" class="mb-2">
-                <app-inbound-summary [details]="packageData?.supplementalAttractions"
-                    [specialOffers]="packageData?.specialOffers" [inclusions]="packageData?.inclusions"
-                    [exclusions]="packageData?.exclusions"
-                    [childPolicy]="packageData?.childPolicy"></app-inbound-summary>
             </div>
         </section>
 

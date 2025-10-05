@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { OutboundMap } from '../outbound-map/outbound-map';
 import { Router, RouterModule } from '@angular/router';
 import { outBoundPackages } from '../../../data/outbound.data';
 import { OutboundGlobe } from '../outbound-globe/outbound-globe';
@@ -10,7 +9,7 @@ import { OutboundGlobe } from '../outbound-globe/outbound-globe';
   selector: 'app-outbound',
   imports: [
     CommonModule, FormsModule, RouterModule,
-    OutboundMap, OutboundGlobe
+    OutboundGlobe
   ],
   templateUrl: './outbound.html',
   styleUrl: './outbound.css'

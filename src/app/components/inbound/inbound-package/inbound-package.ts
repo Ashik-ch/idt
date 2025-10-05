@@ -3,18 +3,19 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { statesData } from '../../../data/inbound.data';
-import { Package, travelPackages } from '../../../data/package.data';
-import { InboundOverview } from '../../package/inbound-overview/inbound-overview';
+import { Package, travelPackages } from '../../../data/package.data'; 
 import { NgxShineBorderComponent } from '@omnedia/ngx-shine-border';
 import { InboundItinerary } from '../../package/inbound-itinerary/inbound-itinerary';
-import { InboundPricing } from '../../package/inbound-pricing/inbound-pricing'; 
+import { InboundPricing } from '../../package/inbound-pricing/inbound-pricing';
 import { InboundSummary } from '../../package/inbound-summary/inbound-summary';
 import { InboundHotels } from '../../package/inbound-hotels/inbound-hotels';
+import * as AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-inbound-package',
   imports: [CommonModule, FormsModule,
-    InboundOverview,
+    
     InboundItinerary,
     NgxShineBorderComponent,
     InboundPricing,
@@ -38,8 +39,23 @@ export class InboundPackage {
   packageData: Package | null = null;
   activeTab: string = 'overview';
   activeAccordion: string = '';
+  openSection: string | null = 'overview'; // default open
 
   constructor(private route: ActivatedRoute, private router: Router) { }
+
+
+  collapsibleSections = [
+    { id: 'overview', title: 'Explore your daily programme', delay: '0' },
+    // { id: 'itinerary', title: 'Itinerary', delay: '100' },
+    { id: 'hotels', title: 'Components of this Package', delay: '100' },
+    { id: 'details', title: 'Details & Policies', delay: '200' },
+    { id: 'pricing', title: 'Pricing', delay: '300' },
+  ];
+
+
+  toggleSection(id: string) {
+    this.openSection = this.openSection === id ? null : id;
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -47,6 +63,7 @@ export class InboundPackage {
       this.loadStateData(state);
       this.loadPackageData(state);
     });
+    AOS.init({ duration: 700, once: true });
   }
 
 
