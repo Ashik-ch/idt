@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { statesData } from '../../../data/inbound.data';
-import { Package, travelPackages } from '../../../data/package.data'; 
+import { Package, travelPackages } from '../../../data/package.data';
 import { NgxShineBorderComponent } from '@omnedia/ngx-shine-border';
 import { InboundItinerary } from '../../package/inbound-itinerary/inbound-itinerary';
 import { InboundPricing } from '../../package/inbound-pricing/inbound-pricing';
@@ -34,8 +34,6 @@ export class InboundPackage {
   popularDestinations: any[] = [];
   bestTimeToVisit: any[] = [];
   stateData: any;
-
-
   packageData: Package | null = null;
   activeTab: string = 'overview';
   activeAccordion: string = '';

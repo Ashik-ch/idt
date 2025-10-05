@@ -28,6 +28,19 @@
         </div>
     </div>
 
+    <!-- Apart Section -->
+    <section class="max-w-7xl mx-auto  rounded-2xl bg-white p-4 shadow-xl border-2 border-red-500 mb-6  text-center">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-8 relative inline-block" data-aos="fade-up">
+            <span class="text-red-500"> What Sets Your Tour Apart? </span>
+            <div class="absolute left-1/2 -bottom-2 w-24 h-1 bg-red-500 rounded-full -translate-x-1/2"></div>
+        </h2>
+        <div class="flex flex-wrap justify-start gap-3">
+            <span *ngFor="let item of packageData?.tourHighlights" class="flex items-center gap-2 bg-red-50 text-red-600 rounded-full px-3 py-1 text-sm font-medium
+                    hover:bg-red-600 hover:text-white transition-colors duration-300 cursor-default">
+                <i class="pi pi-check text-xs"></i> {{ item }} </span>
+        </div>
+    </section>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 r bg-gray-800 p-6 rounded-2xl">
         <!-- Today's Deal Banner -->
         <om-shine-border borderRadius="1rem" class="text-white text-center m-4">
@@ -96,10 +109,10 @@
 
 
         <!-- Best Time to Visit -->
-        <section class="bg-red-500 rounded-2xl shadow-xl p-8 my-12 text-white">
+        <section class="bg-red-500 rounded-2xl shadow-xl p-4 my-12 text-white">
             <!-- <h2 class="text-2xl font-bold text-gray-100 mb-6">Best Time to Visit {{ stateName }}</h2> -->
-            <h2 class="text-3xl font-bold text-white mb-2  p-3 flex items-center">
-                <span class="bg-white p-3 pt-2 pb-4 rounded-full mr-3">🗓️</span>
+            <h2 class="text-2xl font-bold text-white mb-2 p-2 flex items-center">
+                <span class="bg-white p-3 rounded-full mr-3">🗓️</span>
                 Best Time to Visit {{ stateName }}
             </h2>
             <div class="grid md:grid-cols-4 gap-6">
@@ -116,8 +129,8 @@
 
         <!-- Popular Gallery -->
         <section data-animate="gallery" class="bg-white rounded-3xl shadow-xl py-4 mb-4">
-            <h2 class="text-3xl font-bold text-gray-900 mb-2  p-3 flex items-center">
-                <span class="bg-purple-100 p-3 pt-2 pb-4 rounded-full mr-3">📸</span>
+            <h2 class="text-2xl font-bold text-red-500 mb-2 p-3 flex items-center">
+                <span class="bg-purple-100 p-3 pb-4 rounded-full mr-3">📸</span>
                 Gallery
             </h2>
 

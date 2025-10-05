@@ -23,6 +23,7 @@ export interface Package {
   title: string;
   duration: string;
   summary: string;
+  tourHighlights: string[];
   quickItinerary: string[];
   itineraryOverview: {
     day: string;
@@ -74,6 +75,15 @@ export const travelPackages: Package[] = [
     title: 'Charm of Kerala and Border Beauties',
     duration: '06 Nights / 07 Days',
     summary: 'Experience Kerala’s scenic beauty with curated tours across Munnar, Thekkady, Kumarakom & Cochin.',
+    tourHighlights: [
+      'All-inclusive package without any hidden cost',
+      'Food on a Breakfast basis',
+      'Carefully selected hotels & resorts based on reviews from guests who have already enjoyed them',
+      'Vehicle at disposal from airport to airport on all days without any Km restrictions or additional cost',
+      'One driver & one vehicle for the entire tour',
+      'Tour can be changed to any other fixed date even before 24 hours without any retention fee',
+      'GST, Toll charges, Bata to the driver, Parking fees, etc., included in the Package'
+    ],
     quickItinerary: [
       'Day 01 – Arrival at Coimbatore',
       'Day 02 – Explore Ooty',
