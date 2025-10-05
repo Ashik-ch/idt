@@ -30,6 +30,11 @@ export interface Package {
     details: string[];
     image: string;
   }[];
+  detailedItinerary: {
+    day: string;
+    title: string;
+    details: string[];
+  }[];
   inclusions: string[];
   exclusions: string[];
   highlights: string[];
@@ -155,6 +160,92 @@ export const travelPackages: Package[] = [
         image: "https://img1.wsimg.com/isteam/ip/dd7bf207-c00c-4b95-a0a3-ff510508d271/houseboat.jpeg"
       },
     ],
+    detailedItinerary: [
+      {
+        day: '01',
+        title: 'Arrival at Coimbatore (B + D)',
+        details: [
+          'Reach Coimbatore by flight – We will receive you at the Airport.',
+          'Then proceed to Ooty.',
+          'The time taken to reach Ooty is approximately 3 hours and 10 minutes.',
+          'Reach Ooty by noon.',
+          'Check into the hotel and relax.',
+          'By evening, visit the Botanical Garden and enjoy boating.',
+          'Overnight stay at the hotel.',
+        ],
+      },
+      {
+        day: '02',
+        title: 'Explore Ooty (B + D)',
+        details: [
+          'After breakfast, enjoy a sightseeing tour in and around Ooty.',
+          'Capture the postcard-perfect views of this hill station.',
+          'Visit the Rose Garden, Avvamore Palace, and Government Museum.',
+          'Catch the Toy Train and enjoy the scenic journey to Coonoor.',
+          'Return to the hotel by evening and relax.',
+          'Overnight stay at the hotel.',
+        ],
+      },
+      {
+        day: '03',
+        title: 'Proceed to Munnar (B + D)',
+        details: [
+          'On to Munnar.',
+          'Upon your arrival, you will be driven straight to Munnar hill station.',
+          'On the way, you can enjoy the Tea gardens & the Tea Museum.',
+          'By afternoon, reach Munnar.',
+          'Check into the hotel and relax.',
+          'Spice shopping.',
+          'Overnight stay at the hotel.',
+        ],
+      },
+      {
+        day: '04',
+        title: 'Explore Munnar (B + D)',
+        details: [
+          'Breakfast at the hotel and Our driver will pick you up from the hotel for a sightseeing tour.',
+          'After breakfast, you are guided to Eravikulam National Park.',
+          'Enjoy a full day exploring Munnar sightseeing.',
+          'Later, visit Mattupetty Dam and Echo Point.',
+          'Move to Kundala Lake by noon.',
+          'Unwind, and you are taken to the Top station to experience the beauty of nature.',
+          'Free your time at leisure.',
+          'Overnight stay at your resort.',
+        ],
+      },
+      {
+        day: '05',
+        title: 'Proceed to Thekkady (B + D)',
+        details: [
+          'In the morning, check out from the hotel & proceed to Thekkady.',
+          'Drive to Thekkady is 3 hours(150 km).',
+          'Reach Thekkady before noon.',
+          'Check into the hotel and relax.',
+          'Afternoon will take you for an Elephant Ride and a Jungle safari.',
+          'By evening, you can enjoy the ‘Kalarippayattu’, the Ancient martial arts of Kerala.',
+          'Overnight stay at the hotel.'
+        ],
+      },
+      {
+        day: '06',
+        title: 'Enjoy Houseboat at Kumarakom (B + D)',
+        details: [
+          'Cruise through lush landscapes.',
+          'Enjoy a traditional lunch onboard.',
+          'The houseboat will be anchored from 5: 30 pm till the next day at 6 Am.',
+          'Dinner onboard.',
+          'Overnight stay in the houseboat.',],
+      },
+      {
+        day: '07',
+        title: 'Departure from Cochin (B)',
+        details: [
+          'After breakfast, check out of the houseboat.',
+          'And we will take you to the Cochin Airport to catch your return flight, carrying beautiful memories of Kerala.',
+        ],
+      },
+    ],
+
     inclusions: [
       'Local English-speaking driver',
       'Twin/double accommodation with daily breakfast + dinner',
