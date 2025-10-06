@@ -1,30 +1,36 @@
 <div class="max-w-5xl mx-auto px-4 py-6 border-2 border-white rounded-2xl mt-10">
-    <h2 class="text-sm md:text-xl font-base text-white text-center mb-8">
-        Do you want to confirm the tour without any modifications? .
-    </h2>
-    <form #bookingForm="ngForm" (ngSubmit)="submitForm(bookingForm)"
-        class="max-w-2xl mx-auto space-y-4 text-sm text-gray-700">
 
+    <!-- Toggle Buttons -->
+    <div class="flex justify-center gap-4 mb-6">
+        <button (click)="showTourForm=true" [class.bg-red-600]="showTourForm" [class.bg-gray-500]="!showTourForm"
+            class="text-white px-4 py-2 rounded-md transition">Tour Request</button>
+        <button (click)="showTourForm=false" [class.bg-red-600]="!showTourForm" [class.bg-gray-500]="showTourForm"
+            class="text-white px-4 py-2 rounded-md transition">Change Plan</button>
+    </div>
+
+    <!-- Tour Request Form -->
+    <form *ngIf="showTourForm" #bookingForm="ngForm" (ngSubmit)="submitTourForm(bookingForm)"
+        class="max-w-2xl mx-auto space-y-4 text-sm text-gray-700">
+        <h2 class="text-sm md:text-xl font-base text-white text-center mb-8">
+            Do you want to confirm the tour without any modifications?
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="relative">
                 <input type="text" id="name" [(ngModel)]="formData.name" name="name" required
-                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none transition text-sm" />
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none text-sm" />
                 <label for="name"
-                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-red-600 transition-all">
-                    Name *
-                </label>
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Name *</label>
                 @if (bookingForm.submitted && !formData.name) {
                 <p class="text-red-500 text-xs mt-0.5">Name is required.</p>
                 }
             </div>
-
             <div class="relative">
                 <input type="tel" id="number" [(ngModel)]="formData.number" name="number" required pattern="[0-9]{10}"
-                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none transition text-sm" />
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none text-sm" />
                 <label for="number"
-                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-red-600 transition-all">
-                    Contact Number *
-                </label>
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">Contact
+                    Number *</label>
                 @if (bookingForm.submitted && !formData.number) {
                 <p class="text-red-500 text-xs mt-0.5">Contact number is required.</p>
                 }
@@ -127,36 +133,106 @@
                 </label>
             </div>
         </div>
+        <div class="text-center pt-3">
+            <button type="submit"
+                class="bg-red-600 text-white font-medium px-6 py-2.5 rounded-md hover:bg-red-700 transition-all duration-150">
+                Submit Tour Request
+            </button>
+        </div>
+    </form>
+
+    <!-- Change Plan Form -->
+    <form *ngIf="!showTourForm" #changePlanForm="ngForm" (ngSubmit)="submitChangeForm(changePlanForm)"
+        class="max-w-2xl mx-auto space-y-4 text-sm text-gray-700">
+        <h2 class="text-sm md:text-xl font-base text-white text-center mb-8">
+            Want to modify your plan? Fill it out and we’ll get back to you. </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="relative">
+                <input type="text" id="name2" [(ngModel)]="changeData.name" name="name" required
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none text-sm" />
+                <label for="name2"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">Name
+                    *</label>
+            </div>
+            <div class="relative">
+                <input type="email" id="email" [(ngModel)]="changeData.email" name="email" required
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none text-sm" />
+                <label for="email"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">Email
+                    *</label>
+            </div>
+        </div>
+        <div class="relative">
+            <input type="tel" id="contact" name="contact" [(ngModel)]="changeData.contact" required pattern="[0-9]{10}"
+                class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none text-sm transition" />
+            <label for="contact"
+                class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                Call / WhatsApp Number *
+            </label>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="relative">
+                <input type="number" id="adults" name="adults" [(ngModel)]="changeData.adults" min="1" required
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none text-sm transition" />
+                <label for="adults"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Adults *
+                </label>
+            </div>
+
+            <div class="relative">
+                <input type="number" id="children612" name="children612" [(ngModel)]="changeData.children612" min="0"
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none text-sm transition" />
+                <label for="children612"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Children (6–12 yrs)
+                </label>
+            </div>
+
+            <div class="relative">
+                <input type="number" id="childrenBelow5" name="childrenBelow5" [(ngModel)]="changeData.childrenBelow5"
+                    min="0"
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none text-sm transition" />
+                <label for="childrenBelow5"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Children (Below 5 yrs)
+                </label>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="relative">
+            <textarea id="modifications" name="modifications" [(ngModel)]="changeData.modifications" rows="4" required
+                class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-2 focus:border-red-500 focus:ring-0 outline-none text-sm transition resize-none"></textarea>
+            <label for="modifications"
+                class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                Describe the modifications needed *
+            </label>
+        </div>
 
         <div class="text-center pt-3">
             <button type="submit"
-                class="bg-red-600 text-white font-medium px-6 py-2.5 rounded-md hover:bg-red-700 active:scale-95 transition-all duration-150">
-                Submit Tour Request
+                class="bg-red-600 text-white font-medium px-6 py-2.5 rounded-md hover:bg-red-700 transition-all duration-150">
+                Submit Change Request
             </button>
         </div>
     </form>
 </div>
 
-<!-- ✅ Success Modal -->
-@if (showSuccessModal) {
-<div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-all duration-300">
+<!-- Success Modal -->
+<div *ngIf="showSuccessModal"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-all duration-300">
     <div class="bg-white rounded-2xl shadow-2xl w-11/12 md:w-1/3 p-6 text-center animate-fade-in">
         <div class="flex justify-center mb-4">
-            <div class="w-16 h-16 flex items-center justify-center rounded-full bg-green-100 text-green-600 text-4xl">
-                ✓
+            <div class="w-16 h-16 flex items-center justify-center rounded-full bg-green-100 text-green-600 text-4xl">✓
             </div>
         </div>
-        <h2 class="text-2xl font-semibold text-gray-800 mb-2">
-            Booking Confirmed!
-        </h2>
-        <p class="text-gray-600 mb-4">
-            Thank you for your booking! You’ll receive confirmation within 6 hours
-        </p>
-
-        <button (click)="showSuccessModal=false"
-            class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-lg transition-all duration-300">
-            Close
-        </button>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-2">Request Sent!</h2>
+        <p class="text-gray-600 mb-4">You’ll receive confirmation within 6 hours.</p>
+        <button (click)="closeModal()"
+            class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-lg transition-all duration-300">Close</button>
     </div>
 </div>
-}
