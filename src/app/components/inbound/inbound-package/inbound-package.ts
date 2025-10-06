@@ -11,16 +11,17 @@ import { InboundSummary } from '../../package/inbound-summary/inbound-summary';
 import { InboundHotels } from '../../package/inbound-hotels/inbound-hotels';
 import * as AOS from 'aos';
 import 'aos/dist/aos.css';
+import { BookingForm } from '../../../component/booking-form/booking-form';
 
 @Component({
   selector: 'app-inbound-package',
   imports: [CommonModule, FormsModule,
-    
     InboundItinerary,
     NgxShineBorderComponent,
     InboundPricing,
     InboundHotels,
     InboundSummary,
+    BookingForm,
   ],
   templateUrl: './inbound-package.html',
   styleUrl: './inbound-package.css'

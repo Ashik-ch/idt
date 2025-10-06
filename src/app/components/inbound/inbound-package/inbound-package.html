@@ -35,7 +35,7 @@
             <div class="absolute left-1/2 -bottom-2 w-24 h-1 bg-red-500 rounded-full -translate-x-1/2"></div>
         </h2>
         <div class="flex flex-wrap justify-start gap-3">
-            <span *ngFor="let item of packageData?.tourHighlights" class="flex items-center gap-2 bg-red-50 text-red-600 rounded-full px-3 py-1 text-sm font-medium
+            <span *ngFor="let item of packageData?.tourHighlights" class="flex items-center gap-2 bg-red-50 text-gray-800 rounded-full px-3 py-1 text-sm font-medium
                     hover:bg-red-600 hover:text-white transition-colors duration-300 cursor-default">
                 <i class="pi pi-check text-xs"></i> {{ item }} </span>
         </div>
@@ -107,7 +107,7 @@
             </div>
         </section>
 
-
+        <app-booking-form></app-booking-form>
         <!-- Best Time to Visit -->
         <section class="bg-red-500 rounded-2xl shadow-xl p-4 my-12 text-white">
             <!-- <h2 class="text-2xl font-bold text-gray-100 mb-6">Best Time to Visit {{ stateName }}</h2> -->

@@ -1,0 +1,162 @@
+<div class="max-w-5xl mx-auto px-4 py-6 border-2 border-white rounded-2xl mt-10">
+    <h2 class="text-sm md:text-xl font-base text-white text-center mb-8">
+        Do you want to confirm the tour without any modifications? .
+    </h2>
+    <form #bookingForm="ngForm" (ngSubmit)="submitForm(bookingForm)"
+        class="max-w-2xl mx-auto space-y-4 text-sm text-gray-700">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="relative">
+                <input type="text" id="name" [(ngModel)]="formData.name" name="name" required
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none transition text-sm" />
+                <label for="name"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-red-600 transition-all">
+                    Name *
+                </label>
+                @if (bookingForm.submitted && !formData.name) {
+                <p class="text-red-500 text-xs mt-0.5">Name is required.</p>
+                }
+            </div>
+
+            <div class="relative">
+                <input type="tel" id="number" [(ngModel)]="formData.number" name="number" required pattern="[0-9]{10}"
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none transition text-sm" />
+                <label for="number"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-red-600 transition-all">
+                    Contact Number *
+                </label>
+                @if (bookingForm.submitted && !formData.number) {
+                <p class="text-red-500 text-xs mt-0.5">Contact number is required.</p>
+                }
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="relative">
+                <input type="number" id="adults" [(ngModel)]="formData.adults" name="adults" required min="1"
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none transition text-sm" />
+                <label for="adults"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Number of Adults *
+                </label>
+                @if (bookingForm.submitted && (!formData.adults || formData.adults < 1)) { <p
+                    class="text-red-500 text-xs mt-0.5">At least one adult is required.</p>
+                    }
+            </div>
+
+            <div class="relative">
+                <input type="number" id="children" [(ngModel)]="formData.children" name="children" min="0"
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none transition text-sm" />
+                <label for="children"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Number of Children (6–12 yrs)
+                </label>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="relative">
+                <input type="date" id="arrival" [(ngModel)]="formData.arrival" name="arrival"
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none transition text-sm" />
+                <label for="arrival"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Date of Arrival
+                </label>
+            </div>
+
+            <div class="relative">
+                <input type="date" id="return" [(ngModel)]="formData.return" name="return"
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none transition text-sm" />
+                <label for="return"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Date of Return
+                </label>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="relative">
+                <input type="number" id="rooms" [(ngModel)]="formData.rooms" name="rooms" min="1"
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none transition text-sm" />
+                <label for="rooms"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Number of Rooms
+                </label>
+            </div>
+
+            <div class="relative">
+                <input type="number" id="extraBeds" [(ngModel)]="formData.extraBeds" name="extraBeds" min="0"
+                    class="peer w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 focus:border-red-500 focus:ring-0 outline-none transition text-sm" />
+                <label for="extraBeds"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Extra Beds
+                </label>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="relative">
+                <select id="packageType" [(ngModel)]="formData.packageType" name="packageType"
+                    class="w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 text-sm bg-white focus:border-red-500 focus:ring-0 outline-none transition">
+                    <option value="" disabled selected hidden></option>
+                    <option>3 Star Deluxe</option>
+                    <option>4 Star Deluxe</option>
+                    <option>5 Star Deluxe</option>
+                    <option>5 Star Luxury</option>
+                </select>
+                <label for="packageType"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Type of Package
+                </label>
+            </div>
+
+            <div class="relative">
+                <select id="transportType" [(ngModel)]="formData.transportType" name="transportType"
+                    class="w-full border border-gray-300 rounded-md px-3 pt-5 pb-1 text-sm bg-white focus:border-red-500 focus:ring-0 outline-none transition">
+                    <option value="" disabled selected hidden></option>
+                    <option>Sedan Cab</option>
+                    <option>Toyota Innova Crysta</option>
+                    <option>Traveller 12 Seater</option>
+                    <option>Traveller 17 Seater</option>
+                    <option>Traveller 25 Seater</option>
+                    <option>AC Luxury Bus</option>
+                </select>
+                <label for="transportType"
+                    class="absolute left-3 top-1.5 text-xs text-gray-500 peer-focus:text-red-600 transition-all">
+                    Type of Transport
+                </label>
+            </div>
+        </div>
+
+        <div class="text-center pt-3">
+            <button type="submit"
+                class="bg-red-600 text-white font-medium px-6 py-2.5 rounded-md hover:bg-red-700 active:scale-95 transition-all duration-150">
+                Submit Tour Request
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- ✅ Success Modal -->
+@if (showSuccessModal) {
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-all duration-300">
+    <div class="bg-white rounded-2xl shadow-2xl w-11/12 md:w-1/3 p-6 text-center animate-fade-in">
+        <div class="flex justify-center mb-4">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full bg-green-100 text-green-600 text-4xl">
+                ✓
+            </div>
+        </div>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-2">
+            Booking Confirmed!
+        </h2>
+        <p class="text-gray-600 mb-4">
+            Thank you for your booking! You’ll receive confirmation within 6 hours
+        </p>
+
+        <button (click)="showSuccessModal=false"
+            class="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-lg transition-all duration-300">
+            Close
+        </button>
+    </div>
+</div>
+}
