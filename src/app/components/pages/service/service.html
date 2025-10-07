@@ -50,7 +50,7 @@
             </div>
         </div>
     </section>
-    
+
 </div>
 
 <div class="py-16">
@@ -76,20 +76,42 @@
                 </div>
             </div>
 
-            <!-- Features -->
+            <!-- Service Grid -->
             <div class="order-2 md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div *ngFor="let service of services; let i = index"
-                    class="flex items-start flex-col feature bg-red-500" data-aos="zoom-in"
-                    [attr.data-aos-delay]="i * 150">
-                    <i class="{{ service.icon }} text-5xl  text-white  mb-4"></i>
-                    <h3 class="text-xl font-semibold text-white mb-2">{{ service.title }}</h3>
-                    <p class="text-gray-50">{{ service.desc }}</p>
+                <div *ngFor="let service of services; let i = index" class="p-6 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 shadow-lg text-white cursor-pointer
+                transform hover:scale-110 hover:shadow-2xl transition-transform duration-300 ease-out"
+                    (click)="openModal(service)" data-aos="zoom-in" [attr.data-aos-delay]="i * 150">
+                    <i [class]="service.icon + ' text-5xl mb-4'"></i>
+                    <h3 class="text-xl font-semibold mb-1">{{ service.title }}</h3>
+                    <p class="text-sm opacity-90">{{ service.subtitle }}</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Modal -->
+@if (selectedService) {
+<div class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden animate-fade-in">
+        <!-- Header -->
+        <div class="flex justify-between items-center bg-red-600 px-6 py-4 text-white">
+            <div>
+                <h2 class="text-xl font-semibold">{{ selectedService.title }}</h2>
+                <p class="text-sm opacity-80">{{ selectedService.subtitle }}</p>
+            </div>
+            <button (click)="closeModal()" class="text-white text-2xl leading-none hover:text-gray-200">×</button>
+        </div>
+        <div class="p-6 space-y-4">
+            <p class="text-gray-700 text-sm">{{ selectedService.desc }}</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
+                <img *ngFor="let img of selectedService.images" [src]="img" alt="{{ selectedService.title }}"
+                    class="rounded-lg w-full h-28 object-cover hover:scale-105 transition-transform duration-300" />
+            </div>
+        </div>
+    </div>
+</div>
+}
 <!-- Testimonials -->
 <section class="bg-gradient-to-b from-gray-50 to-white py-20 relative overflow-hidden ">
     <div class="absolute top-0 left-0 w-72 h-72 bg-red-100 rounded-full blur-3xl opacity-40 -z-10"></div>

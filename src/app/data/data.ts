@@ -76,26 +76,43 @@ export const Services = [
   {
     icon: 'pi pi-building',
     title: 'Relax in Our Choice of Hotels',
+    subtitle: 'Handpicked Stays for Every Destination',
     desc: 'Stay in carefully selected hotels across Kerala — combining comfort, style, and authentic local charm for a memorable experience.',
-    img: 'assets/images/a.jpg'
+    images: [
+      'assets/images/a.jpg',
+      'assets/images/b.jpg',
+      'assets/images/c.jpg'
+    ]
   },
   {
     icon: 'pi pi-car',
     title: 'Ride in Comfort & Style',
+    subtitle: 'Private Chauffeur & Premium Vehicles',
     desc: 'Travel in modern, air-conditioned vehicles driven by experienced chauffeurs for a smooth and safe journey.',
-    img: 'assets/images/b.jpg'
+    images: [
+      'assets/images/d.jpg',
+      'assets/images/e.jpg'
+    ]
   },
   {
     icon: 'pi pi-sparkles',
     title: 'Enjoy One-of-a-Kind Experiences',
+    subtitle: 'Exclusive Kerala Adventures',
     desc: 'Discover unique attractions and curated add-on adventures — from serene backwater cruises to cultural heritage tours.',
-    img: 'assets/images/c.jpg'
+    images: [
+      'assets/images/g.jpg',
+      'assets/images/f.jpg',
+      'assets/images/h.jpg'
+    ]
   },
   {
     icon: 'pi pi-headphones',
     title: 'Dedicated Assistance',
+    subtitle: '24x7 Guest Support',
     desc: 'Our expert team is available around the clock to ensure a seamless and stress-free travel experience.',
-    img: 'assets/images/d.jpg'
+    images: [
+      'assets/images/i.jpg'
+    ]
   },
 ];
 

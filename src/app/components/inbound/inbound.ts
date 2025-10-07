@@ -4,10 +4,13 @@ import { inboundPackages } from '../../data/package.data';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Qoutes } from '../pages/qoutes/qoutes';
+import { QUOTES } from '../../data/qoutes.data';
 
 @Component({
   selector: 'app-inbound',
   imports: [InboundMap,
+    Qoutes,
     CommonModule, FormsModule,
   ],
   templateUrl: './inbound.html',
@@ -15,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class Inbound {
   inboundPackages = inboundPackages;
+  qoutes = QUOTES[0];
   constructor(private router: Router) { }
 
   navigateToState(state: string) {

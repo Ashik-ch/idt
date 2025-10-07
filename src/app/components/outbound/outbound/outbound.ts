@@ -4,17 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { outBoundPackages } from '../../../data/outbound.data';
 import { OutboundGlobe } from '../outbound-globe/outbound-globe';
+import { QUOTES } from '../../../data/qoutes.data';
+import { Qoutes } from '../../pages/qoutes/qoutes';
 
 @Component({
   selector: 'app-outbound',
   imports: [
     CommonModule, FormsModule, RouterModule,
-    OutboundGlobe
+    OutboundGlobe, Qoutes
   ],
   templateUrl: './outbound.html',
   styleUrl: './outbound.css'
 })
 export class Outbound {
+  qoutes = QUOTES[1];
   countries = outBoundPackages;
   constructor(private router: Router) { }
 

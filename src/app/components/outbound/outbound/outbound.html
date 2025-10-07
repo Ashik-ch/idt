@@ -1,3 +1,4 @@
+<app-qoutes [quote]="qoutes"></app-qoutes>
 <div class="min-h-screen bg-gray-50 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
@@ -7,14 +8,11 @@
                     class="w-72 h-72 bg-gradient-to-r from-red-400/20 to-red-600/20 rounded-full blur-3xl animate-pulse">
                 </div>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-6  font-serif 
-                     bg-gradient-to-r from-red-700 via-red-500 to-red-600 
-                     bg-clip-text text-transparent drop-shadow-lg">
-                International Travel Packages </h1>
-
-            <div class="relative flex justify-center mb-8">
-                <span class="w-28 h-1 bg-gradient-to-r from-red-600 via-red-500 to-red-700 rounded-full"></span>
-            </div>
+            <h1
+                class="text-2xl md:text-4xl font-bold font-serif my-4 rounded-2xl py-3 border border-red-500 inline-block">
+                <span class="text-white bg-red-500 p-3 rounded-l-2xl">International </span>
+                <span class="text-red-500 ms-2 p-3">Travel Packages</span>
+            </h1>
             <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed  text-justify px-4 md:p-0">
                 Explore the world with our carefully curated international travel packages.
                 From exotic beaches to historic cities, discover amazing destinations across continents.
@@ -25,7 +23,7 @@
         <app-outbound-globe></app-outbound-globe>
 
         <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">
+            <h2 class="text-2xl font-bold text-red-500 mb-8 text-center">
                 Explore Destinations by Country
             </h2>
 

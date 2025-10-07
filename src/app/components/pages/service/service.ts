@@ -16,4 +16,13 @@ export class Service {
   features = features;
   services = Services;
   testimonials = testimonialList;
+  selectedService: any = null;
+
+  openModal(service: any) {
+    this.selectedService = service;
+  }
+
+  closeModal() {
+    this.selectedService = null;
+  }
 }
