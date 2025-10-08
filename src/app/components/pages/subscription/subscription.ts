@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RecaptchaModule } from 'ng-recaptcha-2';
 
 @Component({
   selector: 'app-subscription',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RecaptchaModule],
   templateUrl: './subscription.html',
   styleUrls: ['./subscription.css']
 })
@@ -61,5 +62,9 @@ export class Subscription {
     // placeholder submission handler
     // In real app, call a service here
     console.log('Subscribe:', { email: this.email, phone: this.phone });
+  }
+
+  onCaptchaResolved(response: any) {
+    console.log('reCAPTCHA solved:', response);
   }
 }
