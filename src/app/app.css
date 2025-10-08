@@ -1,0 +1,9 @@
+.kursor {
+    background-color: #ff0055 !important;
+    border: 2px solid #fff !important; 
+}
+
+.kursor--active {
+    transform: scale(1.5);
+    background-color: #ffffff !important;
+}

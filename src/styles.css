@@ -4,17 +4,27 @@
 @tailwind utilities;
 
 
-:root {
-  --brand: #e11d48; 
+.kursor {
+  background-color: #ffffff !important;
+  border: 2px solid #ff0000 !important;
 }
 
-.bg-red-500{
-  background-color: #ff0000;
-} 
+.kursor--active {
+  transform: scale(1.5);
+  background-color: #ffffff !important;
+}
 
-.text-red-500{
+:root {
+  --brand: #e11d48;
+}
+
+.bg-red-500 {
+  background-color: #ff0000;
+}
+
+.text-red-500 {
   color: #ff0000;
-} 
+}
 
 html,
 body {
