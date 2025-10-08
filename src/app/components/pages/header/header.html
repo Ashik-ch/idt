@@ -18,13 +18,31 @@
       </div>
     </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
-      <a routerLink="/" class="hover:text-red-600 transition-colors">Home</a>
-      <a routerLink="/inbound" class="hover:text-red-600 transition-colors">Inbound</a>
-      <a routerLink="/outbound" class="hover:text-red-600 transition-colors">Outbound</a>
-      <a routerLink="/contact" class="hover:text-red-600 transition-colors">Contact</a>
-    </nav>
+    <!-- Desktop Nav + Socials -->
+    <div class="hidden md:flex items-center gap-8">
+      <nav class="flex items-center gap-8 text-[15px] font-medium">
+        <a routerLink="/" class="hover:text-red-600 transition-colors">Home</a>
+        <a routerLink="/inbound" class="hover:text-red-600 transition-colors">Inbound</a>
+        <a routerLink="/outbound" class="hover:text-red-600 transition-colors">Outbound</a>
+        <a routerLink="/contact" class="hover:text-red-600 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Social Icons -->
+      <div class="flex items-center gap-3 pl-5 border-l border-gray-200">
+        <a href="https://facebook.com" target="_blank"
+          class="w-8 h-8 flex items-center justify-center rounded-full text-white bg-red-500 hover:bg-red-100 hover:text-gray-600   transition">
+          <i class="pi pi-facebook text-sm"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank"
+          class="w-8 h-8 flex items-center justify-center rounded-full  text-white bg-red-500 hover:bg-red-100 hover:text-gray-600   transition">
+          <i class="pi pi-instagram text-sm"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank"
+          class="w-8 h-8 flex items-center justify-center rounded-full  text-white bg-red-500 hover:bg-red-100 hover:text-gray-600   transition">
+          <i class="pi pi-linkedin text-sm"></i>
+        </a>
+      </div>
+    </div>
 
     <!-- Mobile Menu Button -->
     <button class="md:hidden p-2 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
@@ -41,5 +59,15 @@
     <a routerLink="/inbound" (click)="isMenuOpen=false" class="block py-2 hover:text-red-600 transition">Inbound</a>
     <a routerLink="/outbound" (click)="isMenuOpen=false" class="block py-2 hover:text-red-600 transition">Outbound</a>
     <a routerLink="/contact" (click)="isMenuOpen=false" class="block py-2 hover:text-red-600 transition">Contact</a>
+
+    <!-- Mobile Social Icons -->
+    <div class="flex justify-center gap-4 mt-3 pt-3 border-t border-gray-100">
+      <a href="https://facebook.com" target="_blank" class="text-gray-600 hover:text-red-600 transition"><i
+          class="pi pi-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" class="text-gray-600 hover:text-red-600 transition"><i
+          class="pi pi-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank" class="text-gray-600 hover:text-red-600 transition"><i
+          class="pi pi-linkedin"></i></a>
+    </div>
   </nav>
 </header>
