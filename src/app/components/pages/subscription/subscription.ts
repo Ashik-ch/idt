@@ -20,6 +20,8 @@ export class Subscription {
   private intersectionObserver?: IntersectionObserver;
 
   ngOnInit(): void {
+    this.loadRecaptchaScript();
+
     if (typeof window !== 'undefined') {
       // Guard for GSAP existence when CDN not yet loaded
       const hasGsap = (window as any).gsap && (window as any).gsap.to;
@@ -66,5 +68,20 @@ export class Subscription {
 
   onCaptchaResolved(response: any) {
     console.log('reCAPTCHA solved:', response);
+  }
+
+
+  private loadRecaptchaScript(): void {
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js';
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      console.log('reCAPTCHA script loaded successfully');
+    };
+    script.onerror = (error) => {
+      console.error('Error loading reCAPTCHA script:', error);
+    };
+    document.body.appendChild(script);
   }
 }

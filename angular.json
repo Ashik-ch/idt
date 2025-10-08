@@ -40,9 +40,7 @@
               "node_modules/aos/dist/aos.css",
               "node_modules/kursor/dist/kursor.css"
             ],
-            "scripts": [
-              "https://www.google.com/recaptcha/api.js"
-            ],
+            "scripts": [],
             "browser": "src/main.ts",
             "baseHref": "/idt/"
           },
@@ -104,9 +102,7 @@
               "src/styles.css",
               "node_modules/kursor/dist/kursor.css"
             ],
-            "scripts": [
-              "https://www.google.com/recaptcha/api.js"
-            ]
+            "scripts": []
           }
         },
         "deploy": {
