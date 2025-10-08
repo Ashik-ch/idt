@@ -108,7 +108,7 @@ Please confirm the booking without modifications.
   `;
 
     const encodedMessage = encodeURIComponent(message);
-    const phoneNumber = '919876543210'; // your WhatsApp number
+    const phoneNumber = '919847240456';
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
 
     // EmailJS Integration

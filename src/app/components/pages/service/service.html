@@ -117,20 +117,41 @@
     <div class="absolute top-0 left-0 w-72 h-72 bg-red-100 rounded-full blur-3xl opacity-40 -z-10"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-red-200 rounded-full blur-3xl opacity-30 -z-10"></div>
     <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-red-500 mb-14" data-aos="zoom-in-right"> What Our Travelers Say </h2>
-        <div class="flex flex-col gap-10 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+        <h2 class="text-3xl font-bold text-red-500 mb-14" data-aos="zoom-in-right">
+            What Our Travelers Say
+        </h2>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div *ngFor="let t of testimonials; let i = index" data-aos="zoom-in-right" [attr.data-aos-delay]="i * 150"
-                class="relative bg-white rounded-2xl shadow-lg p-6 text-left transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                class="flex flex-col justify-between bg-white rounded-2xl shadow-lg p-6 text-left transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                 <div class="absolute -bottom-3 left-8 w-6 h-6 bg-white rotate-45 shadow-md"></div>
-                <p class="text-gray-700 leading-relaxed mb-6 text-base"> {{ t.message }} </p>
-                <div class="flex items-center gap-4">
+                <div>
+                    <p class="text-gray-700 leading-relaxed text-base mb-4 line-clamp-5">
+                        {{ t.message }}
+                    </p>
+
+                    <div class="flex text-yellow-400 text-sm mb-6">
+                        <ng-container *ngFor="let star of [1,2,3,4,5]; let idx = index">
+                            <i class="pi" [ngClass]="idx < t.rating ? 'pi-star-fill text-yellow-400' : 'pi-star text-gray-300'
+                        "></i>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 border-t border-gray-100 pt-4 mt-auto">
                     <img [src]="t.avatar" alt="{{ t.name }}"
                         class="w-12 h-12 rounded-full object-cover border-2 border-red-500" />
                     <div>
                         <h4 class="text-lg font-semibold text-gray-900">{{ t.name }}</h4>
                         <p class="text-sm text-red-600 font-medium">{{ t.location }}</p>
-                        <a href=""> <i class="pi pi-phone"></i> </a> <a href=""> <i class="pi pi-whatsapp mx-4"></i>
-                        </a>
+                        <div class="flex items-center text-gray-600 text-base mt-1">
+                            <a [href]="'tel:' + t.contact" class="hover:text-red-500 transition" title="Call now">
+                                <i class="pi pi-phone"></i>
+                            </a>
+                            <a [href]="'https://wa.me/' + t.whatsapp.replace('+', '')" target="_blank" rel="noopener"
+                                class="hover:text-green-500 transition mx-3" title="Chat on WhatsApp">
+                                <i class="pi pi-whatsapp"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

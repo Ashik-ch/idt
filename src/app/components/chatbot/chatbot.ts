@@ -15,6 +15,7 @@ export class Chatbot {
 
   openChat() {
     this.isOpen = !this.isOpen;
+    this.currentStep = chatFlow[0];
   }
 
   selectOption(nextId: string) {

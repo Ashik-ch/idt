@@ -1,7 +1,7 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { statesData } from '../../../data/inbound.data';
 import { Package, travelPackages } from '../../../data/package.data';
 import { NgxShineBorderComponent } from '@omnedia/ngx-shine-border';
@@ -15,7 +15,7 @@ import { BookingForm } from '../../../component/booking-form/booking-form';
 
 @Component({
   selector: 'app-inbound-package',
-  imports: [CommonModule, FormsModule,
+  imports: [CommonModule, FormsModule,RouterModule,
     InboundItinerary,
     NgxShineBorderComponent,
     InboundPricing,
@@ -40,7 +40,7 @@ export class InboundPackage {
   activeAccordion: string = '';
   openSection: string | null = 'overview'; // default open
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private viewportScroller: ViewportScroller) { }
 
 
   collapsibleSections = [
@@ -61,6 +61,8 @@ export class InboundPackage {
       const state = params['state'];
       this.loadStateData(state);
       this.loadPackageData(state);
+      setTimeout(() => this.viewportScroller.scrollToPosition([0, 0]), 0);
+
     });
     AOS.init({ duration: 700, once: true });
   }

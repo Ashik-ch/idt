@@ -114,7 +114,7 @@ export const chatFlow: ChatStep[] = [
         question: '📞 Sure! How would you prefer to reach us?',
         options: [
             { text: '📧 Email: hello@idt.example', next: 'end' },
-            { text: '📱 Call: +91 98765 43210', next: 'end' },
+            { text: '📱 Call: +91 98472 40456', next: 'end' },
             { text: '💬 WhatsApp Chat', next: 'end' },
             { text: '⬅️ Back', next: 'welcome' },
         ],

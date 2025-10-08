@@ -21,35 +21,52 @@
         <!-- Top: Info + Form -->
         <div class="md:col-span-2 grid md:grid-cols-2 gap-6">
             <!-- Left: Info -->
-            <div class="relative space-y-6 bg-white/30 backdrop-blur-md rounded-2xl p-6 shadow-lg">
-                <div class="flex items-start space-x-4 rounded-lg p-3 bg-white/20">
-                    <span class="text-red-600 text-3xl">📍</span>
-                    <div>
-                        <h4 class="font-bold text-white drop-shadow-md">Location</h4>
-                        <p class="text-white drop-shadow-sm">Kalpeta, Wayanad</p>
+            <div class="relative space-y-6  ">
+                <div class="space-y-3">
+                    <div
+                        class="flex items-center space-x-4 p-3 rounded-lg bg-white/80     backdrop-blur-sm hover:bg-white transition">
+                        <i class="pi pi-map-marker text-red-500 text-2xl"></i>
+                        <div>
+                            <h4 class="font-semibold text-red-500">Location</h4>
+                            <p class="text-red-500/90 text-sm">Kalpetta, Wayanad</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="flex items-start space-x-4 rounded-lg p-3 bg-white/20">
-                    <span class="text-red-600 text-3xl">📞</span>
-                    <div>
-                        <h4 class="font-bold text-white drop-shadow-md">Phone</h4>
-                        <p class="text-white drop-shadow-sm">+91 98765 43210</p>
+                    <!-- 📞 Phone -->
+                    <div
+                        class="flex items-center space-x-4 p-3 rounded-lg bg-white/80     backdrop-blur-sm hover:bg-white transition">
+                        <i class="pi pi-phone text-red-500  text-2xl"></i>
+                        <div>
+                            <h4 class="font-semibold text-red-500">Phone</h4>
+                            <p class="text-red-500/90 text-sm">+91 98472 40456</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="flex items-start space-x-4 rounded-lg p-3 bg-white/20">
-                    <span class="text-red-600 text-3xl">⏰</span>
-                    <div>
-                        <h4 class="font-bold text-white drop-shadow-md">Hours</h4>
-                        <p class="text-white drop-shadow-sm">Mon - Fri: 9 AM - 6 PM</p>
+                    <div
+                        class="flex items-center space-x-4 p-3 rounded-lg bg-white/80     backdrop-blur-sm hover:bg-white transition">
+                        <i class="pi pi-whatsapp text-red-500  text-2xl"></i>
+                        <div>
+                            <h4 class="font-semibold text-red-500">WhatsApp</h4>
+                            <p class="text-red-500/90 text-sm">
+                                <a href="https://wa.me/919847240456" target="_blank"
+                                    class="hover:text-green-400 transition">
+                                    +91 98472 40456
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center space-x-4 p-3 rounded-lg bg-white/80     backdrop-blur-sm hover:bg-white transition">
+                        <i class="pi pi-clock text-red-500 text-2xl"></i>
+                        <div>
+                            <h4 class="font-bold text-red-500 drop-shadow-md">Hours</h4>
+                            <p class="text-red-500 drop-shadow-sm">Mon - Fri: 9 AM - 6 PM</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Right: Contact Form -->
             <div class="bg-gray-50 rounded-2xl p-6 shadow-lg flex flex-col space-y-4">
-                <h3 class="text-2xl font-bold text-gray-900">Connect</h3>
                 <form class="space-y-3">
                     <input type="text" placeholder="Full Name"
                         class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500 focus:outline-none">

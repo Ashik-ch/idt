@@ -121,6 +121,9 @@ export const testimonialList = [
   {
     name: 'Anjali Nair',
     location: 'Kerala, India',
+    whatsapp: "+919847240456",
+    contact: "+919847240456",
+    rating: 4,
     message:
       'The trip was perfectly organized, and the houseboat experience in Alleppey was unforgettable!',
     avatar: 'assets/images/f.jpg',
@@ -128,6 +131,9 @@ export const testimonialList = [
   {
     name: 'Rahul Sharma',
     location: 'Delhi, India',
+    whatsapp: "+919847240456",
+    contact: "+919847240456",
+    rating: 4,
     message:
       'A wonderful mix of culture and nature — Munnar’s tea gardens were the highlight for me.',
     avatar: 'https://media.istockphoto.com/id/2006436002/video/happy-confident-and-portrait-of-indian-man-in-office-with-creative-professional-at-tech.jpg?s=640x640&k=20&c=vcKAWd0sGJpV3xR0AK1RCM7zTEpFUcBhQEXbNvN1M78=',
@@ -135,6 +141,9 @@ export const testimonialList = [
   {
     name: 'Sophia Williams',
     location: 'London, UK',
+    whatsapp: "+919847240456",
+    contact: "+919847240456",
+    rating: 5,
     message:
       'Best travel experience ever! Kerala felt like paradise with such smooth arrangements.',
     avatar: 'assets/testimonials/sophia.jpg',
