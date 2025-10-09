@@ -22,7 +22,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular project
-        run: ng build --configuration production
+        run: npx ng build --configuration production
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
