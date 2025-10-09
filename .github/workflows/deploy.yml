@@ -1,32 +1,40 @@
-name: Deploy Angular to GitHub Pages
+name: Deploy Angular App to GH Pages
 
 on:
   push:
     branches:
-      - master  # build & deploy on push to master
+      - master  # Trigger deployment when master is updated
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Required for full history (needed for gh-pages)
 
+      # Step 2: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '20'
 
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Angular project
-        run: npx ng build --configuration production
+      # Step 4: Build Angular app
+      - name: Build Angular app
+        run: npx ng build --configuration production --output-path=dist/idt
 
+      # Step 5: Deploy to GitHub Pages (force clean)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/idt
-          publish_branch: gh-pages
+          force_orphan: true      # Start fresh with a new orphan gh-pages commit
+          commit_message: "Deploy Angular App - ${{ github.sha }}"
